@@ -1,0 +1,63 @@
+
+import Link from "next/link";
+import { CONTACT_LINKS, FOOTER_LINKS } from "@/constants";
+import {JoinUs} from "@/forms/join-us-form";
+
+function Footer() {
+    return (
+        <footer className="bg-[#333333] text-white py-12 ">
+            <div className="w-[90%] max-w-[1800px] mx-auto">
+                <section>
+                    <JoinUs />
+                </section>
+                <div className=" mx-auto px-4 grid md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 className="font-bold mb-4">Quick Links</h4>
+                        <ul className="space-y-2">
+                            {FOOTER_LINKS.map((link) => (
+                                <li key={link.name}>
+                                    <Link
+                                        href={link.link}
+                                        className="hover:text-[#0020F1] transition-colors"
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 className="font-bold mb-4">Connect With Us</h4>
+                        <div className="flex gap-4">
+                            {CONTACT_LINKS.map(({ Icon, link }, index) => (
+                                <a
+                                    key={index}
+                                    href={link}
+                                    target="_blank"
+                                    className="hover:text-[#0020F1] transition-colors"
+                                >
+                                    <Icon className="w-6 h-6" />
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                    <div>
+                        <h4 className="font-bold mb-4">Contact Info</h4>
+                        <address className="not-italic flex flex-col">
+                            <a
+                                href="mailto:tolcelearninghub@gmail.com"
+                                target="_blank"
+                                className="mt-2"
+                            >
+                                tolcelearninghub@gmail.com
+                            </a>
+                            <a href="tel:+2348146273427">+234 814 627 3427</a>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    );
+}
+
+export default Footer;
