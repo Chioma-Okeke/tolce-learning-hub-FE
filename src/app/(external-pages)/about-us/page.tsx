@@ -3,9 +3,9 @@
 import { useEffect } from "react";
 
 import backgroundPicture from "../../../../public/backgroundpattern.svg";
-import { AnimatedSection } from "@/components/shared/AnimatedSection";
-import { MissionAndValues } from "@/components/about-us/MissionAndValues";
-import { TeamMembers } from "@/components/about-us/TeamMembers";
+import { AnimatedSection } from "@/components/shared/animated-section";
+import { MissionAndValues } from "@/components/about-us/mission-and-values";
+import { TeamMembers } from "@/components/about-us/team-members";
 import Image from "next/image";
 import { useWindowWidth } from "@/hooks/use-width";
 
@@ -54,8 +54,8 @@ const About = () => {
                 >
                     <AnimatedSection
                         className={`max-w-[1800px] py-12 sm:py-20 flex flex-col-reverse sm:flex-row items-center w-[90%] lg:w-full h-[450px] 2xl:h-[550px] mx-auto relative ${isSmallScreen
-                                ? "bg-none h-fit gap-5"
-                                : "bg-cover h-fit"
+                            ? "bg-none h-fit gap-5"
+                            : "bg-cover h-fit"
                             }`}
                     >
                         <div className="flex-1 lg:py-12 lg:pl-16 sm:pr-4 sm:bg-white">

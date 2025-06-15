@@ -14,7 +14,7 @@ import {
 export const FOOTER_LINKS = [
     {
         name: "Services",
-        link: "/services",
+        link: "/our-services",
     },
     {
         name: "About Us",
@@ -40,7 +40,7 @@ export const CONTACT_LINKS = [
 export const HEADER_LINKS = [
     { path: "/", label: "Home" },
     { path: "/about-us", label: "About Us" },
-    { path: "/services", label: "Our Services" },
+    { path: "/our-services", label: "Our Services" },
     { path: "/contact", label: "Contact Us" },
 ];
 

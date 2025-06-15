@@ -8,12 +8,12 @@ import { motion, useAnimation } from "framer-motion";
 import { FOCUS_AREAS } from "@/constants";
 import Image from "next/image";
 import { TimerReset, Trophy, User2, Users } from "lucide-react";
-import { AnimatedSection } from "@/components/shared/AnimatedSection";
+import { AnimatedSection } from "@/components/shared/animated-section";
 import Testimonials from "@/components/home/testimonials";
 import HeroSection from "@/components/home/hero-section";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Counter } from "@/components/shared/Counter";
+import { Counter } from "@/components/shared/counter";
 
 const features = [
     {

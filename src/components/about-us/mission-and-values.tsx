@@ -1,7 +1,7 @@
 'use client'
 
-import YoutubeVideo from "./YoutubeVideo";
-import { AnimatedSection } from "../shared/AnimatedSection";
+import YoutubeVideo from "./youtube-video";
+import { AnimatedSection } from "../shared/animated-section";
 import { COMPANY_VALUES } from "@/constants";
 
 export const MissionAndValues = () => {
@@ -32,8 +32,8 @@ export const MissionAndValues = () => {
                 </div>
             </AnimatedSection>
             <div className="py-12 sm:py-20 bg-[#0C111D] lg:px-10 flex-1 flex flex-col mx-auto">
-                <AnimatedSection className="w-[90%] mx-auto lg:w-full">
-                    <h1 className="font-semibold text-white text-2xl lg:text-4xl pb-[10px] xl:text-[40px]">
+                <AnimatedSection className="w-[90%] mx-auto lg:w-full space-y-6">
+                    <h1 className="font-semibold text-white text-2xl lg:text-4xl xl:text-[40px]">
                         The Values that Drive Us
                     </h1>
                     <div className="flex flex-col gap-3">
@@ -42,7 +42,7 @@ export const MissionAndValues = () => {
                                 <div
                                     key={id}
                                     tabIndex={0}
-                                    className="group cursor-pointer flex flex-col lg:flex-row items-center gap-[15px] p-4 transition-all duration-300 rounded-lg bg-transparent text-white hover:bg-white hover:text-[#141414] scale-105 "
+                                    className="group cursor-pointer flex flex-col lg:flex-row items-center gap-[15px] p-4 transition-all duration-300 rounded-lg bg-transparent text-white hover:bg-white hover:text-[#141414] hover:scale-105 "
                                 >
                                     <div
                                         className="text-[#141414] rounded-full p-2 transition-all duration-300 bg-white group-hover:bg-[#0020f1] group-hover:text-white"

@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import './globals.css'
+import BackToTop from "@/components/shared/back-to-top";
 
 
 const inter = Inter({
@@ -82,8 +83,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           inter.variable
         )}
       >
-        <Toaster richColors expand={true} position="top-right"/>
+        <Toaster richColors expand={true} position="top-right" />
         {children}
+        <BackToTop />
       </body>
     </html>
   )
