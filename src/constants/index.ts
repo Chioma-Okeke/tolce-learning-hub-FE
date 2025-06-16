@@ -46,7 +46,7 @@ export const HEADER_LINKS = [
 
 export const FOCUS_AREAS = [
     { path: "/outreaches", label: "Outreaches" },
-    { path: "/skillacquisition", label: "Skill Acquisition" },
+    { path: "/skill-acquisition", label: "Skill Acquisition" },
 ];
 
 export const COMPANY_VALUES = [
@@ -183,5 +183,42 @@ export const TEAM_MEMBERS_IMAGES = [
     {
         name: "Tolu",
         imgSrc: "/ceo/ceo-portrait.jpg",
+    },
+];
+
+export const SKILLS_HIGHLIGHT = [
+    {
+        title: "Technical Skills",
+        skills: ["Excel", "Power BI", "Data Analysis", "Presentation Tools"],
+    },
+    {
+        title: "Soft Skills",
+        skills: [
+            "Communication",
+            "Teamwork",
+            "Problem-Solving",
+            "Critical Thinking",
+        ],
+    },
+];
+
+export const PROGRAM_BENEFITS = [
+    {
+        icon: "🎯",
+        title: "Competitive Edge",
+        description:
+            "Comprehensive skill development for modern workplace demands",
+    },
+    {
+        icon: "💼",
+        title: "Career Readiness",
+        description:
+            "Balanced approach to technical and interpersonal skill growth",
+    },
+    {
+        icon: "🚀",
+        title: "Professional Development",
+        description:
+            "Preparing students for dynamic and evolving work environments",
     },
 ];
