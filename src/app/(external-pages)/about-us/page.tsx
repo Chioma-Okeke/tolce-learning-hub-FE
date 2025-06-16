@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 
-import backgroundPicture from "../../../../public/backgroundpattern.svg";
 import { AnimatedSection } from "@/components/shared/animated-section";
 import { MissionAndValues } from "@/components/about-us/mission-and-values";
 import { TeamMembers } from "@/components/about-us/team-members";
@@ -46,7 +45,7 @@ const About = () => {
                     className="bg-[#F6F9FE] lg:bg-none"
                     style={{
                         backgroundImage: !isSmallScreen
-                            ? `url(${backgroundPicture})`
+                            ? `url("/backgroundpattern.svg")`
                             : "none",
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: "center",

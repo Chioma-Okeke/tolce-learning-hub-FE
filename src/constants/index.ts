@@ -22,7 +22,7 @@ export const FOOTER_LINKS = [
     },
     {
         name: "Contact",
-        link: "/contact",
+        link: "/contact-us",
     },
 ];
 
@@ -41,7 +41,7 @@ export const HEADER_LINKS = [
     { path: "/", label: "Home" },
     { path: "/about-us", label: "About Us" },
     { path: "/our-services", label: "Our Services" },
-    { path: "/contact", label: "Contact Us" },
+    { path: "/contact-us", label: "Contact Us" },
 ];
 
 export const FOCUS_AREAS = [

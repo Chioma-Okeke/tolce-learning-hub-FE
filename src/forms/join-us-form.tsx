@@ -26,7 +26,7 @@ export const JoinUs = () => {
     const onSubmit = (data: JoinUsFormValues) => {
         console.log(data, "logged data")
         form.reset()
-        toast.info("Email sent", {
+        toast.success("Email sent", {
             description: "You will hear from us soon."
         })
     }

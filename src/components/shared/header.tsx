@@ -11,7 +11,7 @@ import { useSidebarStore } from "@/store/side-bar-store";
 import { Logo } from "./logo";
 
 export const Header = () => {
-    const { isOpen, close, toggle, isTransparent } = useSidebarStore()
+    const { isOpen, close, toggle, isTransparent, makeTransparent } = useSidebarStore()
     const [showSubMenus, setShowSubMenus] = useState(false);
     const [showNavItems, setShowNavItems] = useState(false);
     const pathname = usePathname();
@@ -32,7 +32,10 @@ export const Header = () => {
         return () => clearTimeout(timeoutId);
     }, [showNavItems, close]);
 
-    console.log(isTransparent, "status nav");
+    useEffect(() => {
+        makeTransparent(pathname === "/outreaches")
+        console.log("I ran")
+    }, [makeTransparent, pathname])
 
     return (
         <header

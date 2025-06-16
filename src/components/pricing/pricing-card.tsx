@@ -1,5 +1,4 @@
 import React from "react";
-import DiamondSvg from "../../../public/pentagon-design.svg";
 import { splitSentence } from "@/lib/utils";
 import { CheckCircle } from "lucide-react";
 import Image from "next/image";
@@ -69,8 +68,10 @@ export const PricingCard = ({ index, title, price, features }: PricingCardProp) 
             </div>
             <div className="absolute top-0 right-0">
                 <Image
-                    src={DiamondSvg}
+                    src="/pentagon-design.svg"
                     alt=""
+                    width={500}
+                    height={500}
                 />
             </div>
         </div>

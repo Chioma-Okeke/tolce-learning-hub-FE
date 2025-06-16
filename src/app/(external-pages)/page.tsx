@@ -2,8 +2,6 @@
 
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import LearnMoreImage from "../../../public/focusing-image.png";
-import skillImage from "../../../public/skill-acquisition-1.jpg";
 import { motion, useAnimation } from "framer-motion";
 import { FOCUS_AREAS } from "@/constants";
 import Image from "next/image";
@@ -115,7 +113,7 @@ const LandingPage = () => {
                         </div>
                         <div className="rounded-2xl overflow-hidden">
                             <Image
-                                src={LearnMoreImage}
+                                src="/focusing-image.png"
                                 alt="Team collaboration"
                                 loading="lazy"
                                 className="w-full h-[400px] rounded-2xl shadow-lg bg-white object-cover object-center"
@@ -146,7 +144,7 @@ const LandingPage = () => {
                                     src={
                                         index === 0
                                             ? "https://res.cloudinary.com/djrp3aaq9/image/upload/v1739048056/outreach-1.jpg"
-                                            : skillImage
+                                            : "/skill-acquisition-1.jpg"
                                     }
                                     width={100}
                                     height={100}

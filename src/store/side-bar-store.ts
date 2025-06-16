@@ -6,13 +6,14 @@ interface SidebarStore {
   open: () => void
   close: () => void
   toggle: () => void
+  makeTransparent: (val: boolean) => void
 }
 
 export const useSidebarStore = create<SidebarStore>((set) => ({
   isOpen: false,
-  isTransparent: false,
+  isTransparent: true,
   open: () => set({ isOpen: true }),
   close: () => set({ isOpen: false }),
   toggle: () => set((state) => ({ isOpen: !state.isOpen })),
-  makeTransparent: () => set((state) => ({ isTransparent: !state.isOpen })),
+  makeTransparent: (val) => set(() => ({ isTransparent: val })),
 }))
