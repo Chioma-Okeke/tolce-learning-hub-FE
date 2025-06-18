@@ -4,9 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { galleryCategoriesImages } from "@/constants";
 import { AnimatedSection } from "@/components/shared/animated-section";
-import { Counter } from "@/components/shared/counter";
 import { useSidebarStore } from "@/store/side-bar-store";
 import ImageDisplay from "@/modals/image-display";
+import { Counter } from "@/components/shared/Counter";
 
 const stats = [
     { number: 10000, label: "Children Reached" },

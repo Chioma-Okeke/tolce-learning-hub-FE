@@ -11,7 +11,7 @@ import Testimonials from "@/components/home/testimonials";
 import HeroSection from "@/components/home/hero-section";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Counter } from "@/components/shared/counter";
+import { Counter } from "@/components/shared/Counter";
 
 const features = [
     {
