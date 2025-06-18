@@ -1,3 +1,5 @@
+"use client"
+
 import { FAQ_DATA } from "@/components/utils/faqs";
 import { useState } from "react";
 import { FaqItems } from "./faq-items";

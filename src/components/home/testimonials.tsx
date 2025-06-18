@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useRef, useState } from "react";
 import "swiper/css";
 import "swiper/css/effect-fade";
