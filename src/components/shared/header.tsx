@@ -36,12 +36,12 @@ export const Header = () => {
     useEffect(() => {
         const handleScroll = () => {
             if (headerRef.current) {
-                if (window.scrollY > 100) {
+                if (window.scrollY > 30) {
                     headerRef.current.style.position = "relative";
                     headerRef.current.style.backgroundColor = "white";
                 } else {
                     headerRef.current.style.position = "fixed";
-                    headerRef.current.style.backgroundColor = "#b2b2b2";
+                    headerRef.current.style.backgroundColor = "#00000054";
                 }
             }
         }

@@ -4,11 +4,12 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
-import { Autoplay, EffectFade } from "swiper/modules";
+import { Autoplay, EffectFade, Mousewheel } from "swiper/modules";
 import { HERO_DATA, PAGE_URLS } from "@/constants";
 import type { Swiper as SwiperClass } from "swiper";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const HeroSection = () => {
     const swiperRef = React.useRef<SwiperClass | null>(null);
@@ -19,25 +20,15 @@ const HeroSection = () => {
         }
     };
 
-    // function handlePrev() {
-    //     swipeInstance?.slidePrev();
-    // }
-
-    // function handleNext() {
-    //     swipeInstance?.slideNext();
-    // }
-
     return (
         <div className="relative h-fit">
             <Swiper
                 spaceBetween={0}
-                speed={4000}
+                speed={1000}
                 autoplay={{ delay: 6000, disableOnInteraction: false }}
-                effect={"slide"}
-                fadeEffect={{ crossFade: true }}
-                modules={[Autoplay, EffectFade]}
+                effect={"fade"}
+                modules={[Autoplay, EffectFade, Mousewheel]}
                 loop={true}
-                className="mySwiper"
                 onSlideChange={(swiper) => handleSlideChange(swiper)}
                 onSwiper={(swiper) => (swiperRef.current = swiper)}
             >
@@ -70,6 +61,14 @@ const HeroSection = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
+            <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 z-50 flex items-center justify-between w-full px-5">
+                <button onClick={() => swiperRef.current && swiperRef.current.slidePrev()}>
+                    <ChevronLeft width={40} height={40} color="white" className=" hover:scale-110 cursor-pointer" />
+                </button>
+                <button onClick={() => swiperRef.current && swiperRef.current.slideNext()}>
+                    <ChevronRight width={40} height={40} color="white" className=" hover:scale-110 cursor-pointer" />
+                </button>
+            </div>
         </div>
     );
 }
