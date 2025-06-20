@@ -8,7 +8,11 @@ import {
     Instagram,
     Linkedin,
     ShieldCheck,
+    TimerReset,
+    Trophy,
     User,
+    User2,
+    Users,
 } from "lucide-react";
 
 export const PAGE_URLS = {
@@ -18,6 +22,7 @@ export const PAGE_URLS = {
     CONTACT_US: "/contact-us",
     OUTREACHES: "/outreaches",
     SKILL_ACQUISITION: "/skill-acquisition",
+    NEWSLETTER_SUBSCRIPTION: "https://tolce.substack.com/subscribe?utm_source=menu&simple=true&next=https%3A%2F%2Ftolce.substack.com%2Fp%2Fwelcome-on-board"
 }
 
 export const FOOTER_LINKS = [
@@ -53,9 +58,51 @@ export const HEADER_LINKS = [
     { path: "/contact-us", label: "Contact Us" },
 ];
 
+export const FEATURES = [
+    {
+        icon: TimerReset,
+        title: "Flexible Learning",
+        description:
+            "Learn at your own pace with our flexible scheduling options",
+    },
+    {
+        icon: User2,
+        title: "Expert Instructors",
+        description:
+            "Learn from industry professionals with years of experience",
+    },
+    {
+        icon: Users,
+        title: "10,000+ Children Reached",
+        description:
+            "Our programs have inspired thousands of children worldwide",
+        isCounter: true,
+        count: 10000,
+    },
+    {
+        icon: Trophy,
+        title: "5,000+ Students Trained",
+        description:
+            "Equipping learners with the skills to thrive in their careers",
+        isCounter: true,
+        count: 5000,
+    },
+];
+
 export const FOCUS_AREAS = [
-    { path: "/outreaches", label: "Outreaches" },
-    { path: "/skill-acquisition", label: "Skill Acquisition" },
+    { 
+        path: "/skill-acquisition",
+        imgSrc: "/skill-acquisition-1.jpg",
+        label: "Skill Acquisition",
+        description: "Empowering students with technical expertise and essential soft skills to excel in data-driven decision-making and thrive in dynamic workplace environments." 
+    },
+    { 
+        path: "/outreaches",
+        imgSrc: "https://res.cloudinary.com/djrp3aaq9/image/upload/v1739048056/outreach-1.jpg",
+        label: "Outreaches",
+        description: "Empowering students with technical expertise and essential soft skills to excel in data-driven decision-making and thrive in dynamic workplace environments." 
+    },
+    
 ];
 
 export const COMPANY_VALUES = [
@@ -183,7 +230,7 @@ export const TEAM_MEMBERS = [
         name: "Tolu",
         message:
             "We are raising a new generation of intellectually sound youths who are well equipped with the required skills to solve global problems and make massive impact in their communities.",
-        role: "Chief Executive Officer (CEO)",
+        role: "Founder",
         imgSrc: "/ceo/ceo-portrait.jpg",
     },
 ];

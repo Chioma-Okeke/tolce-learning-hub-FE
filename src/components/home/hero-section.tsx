@@ -1,28 +1,23 @@
+"use client"
+
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import { Autoplay, EffectFade } from "swiper/modules";
 import { HERO_DATA, PAGE_URLS } from "@/constants";
-
 import type { Swiper as SwiperClass } from "swiper";
-import { useRouter } from "next/navigation";
 import { Button } from "../ui/button";
 import Link from "next/link";
 
-export default function HeroSection() {
+const HeroSection = () => {
     const swiperRef = React.useRef<SwiperClass | null>(null);
-    const router = useRouter()
 
     const handleSlideChange = (swiper: SwiperClass) => {
         if (swiper.activeIndex === HERO_DATA.length) {
             swiper.slideToLoop(0, 0);
         }
     };
-
-    function navigateToContact() {
-        router.push("/contact")
-    }
 
     // function handlePrev() {
     //     swipeInstance?.slidePrev();
@@ -64,7 +59,7 @@ export default function HeroSection() {
                                             </Button>
                                         </Link>
                                         <Link href={PAGE_URLS.CONTACT_US}>
-                                            <Button onClick={navigateToContact} className="py-3 px-6">
+                                            <Button className="py-3 px-6">
                                                 Contact Us
                                             </Button>
                                         </Link>
@@ -78,3 +73,5 @@ export default function HeroSection() {
         </div>
     );
 }
+
+export default HeroSection

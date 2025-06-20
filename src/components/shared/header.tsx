@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { HEADER_LINKS } from "@/constants";
@@ -15,6 +15,7 @@ export const Header = () => {
     const { isOpen, close, toggle } = useSidebarStore()
     const [showNavItems, setShowNavItems] = useState(false);
     const pathname = usePathname();
+    const headerRef = useRef<HTMLDivElement | null>(null)
 
     useEffect(() => {
         const timeoutId = setTimeout(() => {
@@ -32,8 +33,26 @@ export const Header = () => {
         return () => clearTimeout(timeoutId);
     }, [showNavItems, close]);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (headerRef.current) {
+                if (window.scrollY > 100) {
+                    headerRef.current.style.position = "relative";
+                    headerRef.current.style.backgroundColor = "white";
+                } else {
+                    headerRef.current.style.position = "fixed";
+                    headerRef.current.style.backgroundColor = "#b2b2b2";
+                }
+            }
+        }
+        window.addEventListener("scroll", handleScroll)
+
+        return () => window.removeEventListener("scroll", handleScroll)
+    }, [])
+
     return (
         <header
+            ref={headerRef}
             className={`w-full px-8 pl-3 sm:px-20 z-40 fixed top-0 transition-all ease-in-out duration-500 bg-black/30 text-white`}
         >
             <div

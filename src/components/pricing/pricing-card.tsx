@@ -2,6 +2,8 @@ import React from "react";
 import { splitSentence } from "@/lib/utils";
 import { CheckCircle } from "lucide-react";
 import Image from "next/image";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 type PricingCardProp = {
     index: number
@@ -14,8 +16,8 @@ export const PricingCard = ({ index, title, price, features }: PricingCardProp) 
     return (
         <div
             className={`relative md:h-[750px] lg:h-[675px] pb-10 md:pb-0 border lg:mx-auto  rounded-2xl shadow ${index === 1
-                    ? "text-white bg-gradient-to-r from-[#0020F1] to-[#080E7F]"
-                    : "bg-white text-black"
+                ? "text-white bg-gradient-to-r from-[#0020F1] to-[#080E7F]"
+                : "bg-white text-black"
                 }`}
         >
             <div className="px-5 lg:px-[31px] pt-10 flex flex-col gap-6 md:gap-4 lg:gap-10">
@@ -28,16 +30,14 @@ export const PricingCard = ({ index, title, price, features }: PricingCardProp) 
                             {price}
                         </p>
                     </div>
-                    <div>
-                        <button
-                            className={`px-6 py-3 w-[145px]  font-semibold rounded-lg text-white transition-colors ease-in-out duration-500 ${index === 1
-                                    ? "border-2 border-white bg-transparent hover:bg-white/20 "
-                                    : "bg-[#0020F1] hover:bg-[#080E7F]"
-                                }`}
+                    <Link className="z-20 relative" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfCWNXOaetvKbyxq6aNbnMCwDSJvS2yvviSc26M3AUxiqnGUQ/viewform">
+                        <Button
+                            variant={index === 1 ? "secondary" : "default"}
+                            className={`px-6 py-3 `}
                         >
                             Enroll Now
-                        </button>
-                    </div>
+                        </Button>
+                    </Link>
                 </div>
                 <div>
                     {features.length > 1 && (
@@ -66,12 +66,13 @@ export const PricingCard = ({ index, title, price, features }: PricingCardProp) 
                     )}
                 </div>
             </div>
-            <div className="absolute top-0 right-0">
+            <div className="absolute top-0 right-0 z-0">
                 <Image
                     src="/pentagon-design.svg"
                     alt=""
                     width={500}
                     height={500}
+                    className="z-0 relative"
                 />
             </div>
         </div>
