@@ -1,12 +1,13 @@
 "use client"
 
-import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { z } from "zod";
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
+import { cn } from "@/lib/utils";
 
 const joinUsSchema = z.object({
     email: z.string().email('Please enter a valid email address')
@@ -31,7 +32,7 @@ export const JoinUs = () => {
         })
     }
 
-    const { isDirty, isSubmitting } = form.formState
+    const { isDirty, isSubmitting, errors } = form.formState
 
     return (
         <section className="flex flex-col lg:flex-row gap-8 lg:gap-0 justify-between pb-12 ">
@@ -47,7 +48,9 @@ export const JoinUs = () => {
                     <Form {...form}>
                         <form
                             onSubmit={form.handleSubmit(onSubmit)}
-                            className="w-full flex flex-col gap-2 md:flex-row md:items-end"
+                            className={cn("w-full flex flex-col gap-2 md:flex-row md:items-end", {
+                                "md:items-center": !!errors.email
+                            })}
                         >
                             <FormField
                                 control={form.control}
@@ -58,9 +61,11 @@ export const JoinUs = () => {
                                         <FormControl>
                                             <Input
                                                 placeholder="Enter your email"
+                                                className="border-gray-500"
                                                 {...field}
                                             />
                                         </FormControl>
+                                        <FormMessage/>
                                     </FormItem>
                                 )}
                             />

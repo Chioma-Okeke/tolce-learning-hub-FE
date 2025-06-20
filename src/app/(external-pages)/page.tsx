@@ -12,6 +12,7 @@ import HeroSection from "@/components/home/hero-section";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Counter } from "@/components/shared/Counter";
+import { Button } from "@/components/ui/button";
 
 const features = [
     {
@@ -116,6 +117,8 @@ const LandingPage = () => {
                                 src="/focusing-image.png"
                                 alt="Team collaboration"
                                 loading="lazy"
+                                width={100}
+                                height={100}
                                 className="w-full h-[400px] rounded-2xl shadow-lg bg-white object-cover object-center"
                             />
                         </div>
@@ -240,9 +243,9 @@ const LandingPage = () => {
                         Join thousands of learners who have transformed
                         their careers with us.
                     </p>
-                    <button className="px-8 py-4 bg-white text-[#0020F1] font-semibold text-lg rounded-lg transition-colors ease-linear hover:bg-[#0020F1] hover:text-white duration-500">
+                    <Button className="px-8 py-4 ">
                         Get Started Today
-                    </button>
+                    </Button>
                 </AnimatedSection>
             </div>
         </div>

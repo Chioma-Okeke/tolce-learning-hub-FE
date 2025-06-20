@@ -1,28 +1,23 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { cn } from "@/lib/utils";
 import { CheckCircle, Minus, Plus } from "lucide-react";
 
 type FaqItemsProp = {
-    question: string
-    answer: string
-    index: number
-    currentIndex: number
-    setCurrentIndex: (value: number) => void
+    faqs: {
+        id: string,
+        question: string,
+        answer: string,
+        isLink: boolean,
+    }[]
+    containerClass?: string
     scrollToServices: () => void
 }
 
 export const FaqItems = ({
-    question,
-    answer,
-    index,
-    currentIndex,
-    setCurrentIndex,
+    faqs,
+    containerClass,
     scrollToServices
 }: FaqItemsProp) => {
-    const isOpen = currentIndex === index;
-
-    const toggleOpen = (index: number) => {
-        setCurrentIndex(isOpen ? 0 : index);
-    };
 
     const convertAnswer = (answer: string) => {
         const hasList = answer.includes("*")
@@ -71,34 +66,33 @@ export const FaqItems = ({
     };
 
     return (
-        <div className="border-b border-gray-200 py-4 pb-3 w-full h-fit">
-            <div
-                tabIndex={0}
-                className="flex justify-between items-center cursor-pointer bg-white"
-                onClick={() => toggleOpen(index)}
-            >
-                <h3
-                    className={`text-base text-[#141414] lg:text-lg transition-all ease-in-out duration-300 ${isOpen ? "font-bold" : "font-medium"
-                        }`}
+        <Accordion
+            type="single"
+            collapsible
+            className={cn("border-b border-gray-200 py-4 pb-3 w-full h-fit", containerClass)}
+        >
+            {faqs.map((faq) => (
+                <AccordionItem
+                    key={faq.id}
+                    value={faq.id}
+                    className="border-b border-transparent p-2 transition-colors duration-300 ease-in-out [&[data-state=open]]:border-greyscale-border-default"
                 >
-                    {question}
-                </h3>
-                <button className="w-fit p-1 transition ease-out lg:hover:scale-150 duration-300 rounded-full border border-solid border-[#475467]">
-                    {isOpen ? <Minus /> : <Plus />}
-                </button>
-            </div>
-            <AnimatePresence mode="wait">
-                {isOpen && (
-                    <motion.div
-                        initial={{ y: -20 }}
-                        animate={{ y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="mt-4 lg:text-lg text-[#141414] bg-white"
+                    <AccordionTrigger
+                        showDropdownIcon={false}
+                        className="cursor-pointer group flex w-full items-center justify-between border-none py-2 text-left text-xl font-medium text-greyscale-text-title [&[data-state=open]]:font-semibold"
                     >
-                        {convertAnswer(answer)}
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </div>
+                        <span>{faq.question}</span>
+                        <span className="flex size-8 items-center justify-center cursor-pointer">
+                            <Plus className="text-semantics-surface-default hover:scale-110 group-[&[data-state=open]]:hidden" />
+                            <Minus className="hidden text-semantics-surface-default hover:scale-110 group-[&[data-state=open]]:block" />
+                        </span>
+                    </AccordionTrigger>
+
+                    <AccordionContent className="text-base max-w-[817px] pb-4 text-greyscale-text-body">
+                        {convertAnswer(faq.answer)}
+                    </AccordionContent>
+                </AccordionItem>
+            ))}
+        </Accordion>
     );
 };

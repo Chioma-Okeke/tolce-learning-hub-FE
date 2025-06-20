@@ -5,6 +5,8 @@ import { AnimatedSection } from "@/components/shared/animated-section";
 import Questions from "@/components/shared/faq/FAQ";
 import SellingPoint from "@/components/service-page/selling-point";
 import ServiceTiers from "@/components/service-page/service-tiers";
+import { Button } from "@/components/ui/button";
+import { EnrollmentFormModal } from "@/modals/enrollment-form-modal";
 
 const ServicePage = () => {
     const serviceTierRef = useRef<HTMLDivElement>(null);
@@ -41,15 +43,21 @@ const ServicePage = () => {
                         today&apos;s digital world.
                     </p>
                     <div className="mt-10 flex flex-col md:flex-row gap-4 items-center justify-center">
-                        <button className="w-[200px] h-[60px] border-2 border-white bg-white text-[#0020F1] font-semibold text-lg rounded-lg shadow-md hover:bg-gray-200 transition-colors ease-in-out duration-300">
-                            Join Now
-                        </button>
-                        <button
+                        <EnrollmentFormModal>
+                            <Button
+                                variant="secondary"
+                                className="px-8 text-lg"
+                            >
+                                Join Now
+                            </Button>
+                        </EnrollmentFormModal>
+                        <Button
+                            variant={"outline"}
                             onClick={scrollToServices}
-                            className="w-[200px] h-[60px] border-2 border-white text-white font-semibold text-lg rounded-lg shadow-md bg-transparent hover:bg-white/20 transition-colors ease-in-out duration-300"
+                            className="px-8 border-white text-white hover:text-[#0020F1]"
                         >
                             Learn More
-                        </button>
+                        </Button>
                     </div>
                 </AnimatedSection>
             </div>
@@ -75,7 +83,7 @@ const ServicePage = () => {
 
             {/* frequently asked questions */}
             <AnimatedSection className="py-12 sm:py-20">
-                <Questions scrollToServices={scrollToServices}/>
+                <Questions scrollToServices={scrollToServices} />
             </AnimatedSection>
         </div>
     );

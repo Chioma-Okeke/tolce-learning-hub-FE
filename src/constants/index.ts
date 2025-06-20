@@ -11,6 +11,15 @@ import {
     User,
 } from "lucide-react";
 
+export const PAGE_URLS = {
+    HOME: "/",
+    ABOUT_US: "/about-us",
+    OUR_SERVICES: "/our-services",
+    CONTACT_US: "/contact-us",
+    OUTREACHES: "/outreaches",
+    SKILL_ACQUISITION: "/skill-acquisition",
+}
+
 export const FOOTER_LINKS = [
     {
         name: "Services",

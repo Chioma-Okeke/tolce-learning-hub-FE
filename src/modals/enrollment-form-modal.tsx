@@ -3,12 +3,11 @@
 import { useState } from "react";
 
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
-// import { X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useLockScreenStore } from "@/store/screen-lock-store";
 import { Button } from "@/components/ui/button";
 
-export const EnrollmentFormModal = () => {
+export const EnrollmentFormModal = ({children}: {children: React.ReactNode}) => {
     const [showEnrollForm, setShowEnrollForm] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const { toggleLock } = useLockScreenStore()
@@ -22,12 +21,7 @@ export const EnrollmentFormModal = () => {
             }
         }}>
             <DialogTrigger asChild>
-                <Button
-                    variant="secondary"
-                    className="px-8 py-3 text-lg"
-                >
-                    Enroll Now
-                </Button>
+                {children}
             </DialogTrigger>
             <DialogContent>
                 <AnimatePresence>
@@ -54,7 +48,7 @@ export const EnrollmentFormModal = () => {
                                 <h2 className="font-semibold text-2xl text-center">
                                     Select a Package
                                 </h2>
-                                <div className="flex items-center gap-2">
+                                <div className="flex items-center justify-center gap-2">
                                     <Button variant="outline" onClick={() => setShowEnrollForm(true)} className=" px-8 py-3">
                                         Student Package
                                     </Button>
@@ -69,7 +63,7 @@ export const EnrollmentFormModal = () => {
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.5 }}
-                                className="flex items-center justify-center w-full max-w-full border border-red-500"
+                                className="flex items-center justify-center w-full max-w-full"
                             >
                                 <iframe
                                     src="https://docs.google.com/forms/d/e/1FAIpQLSf1f1A-nd8tE0fDzLi7tqBKbXg4Zxz6KcokHkj1JRaQhXp8Mw/viewform?embedded=true"

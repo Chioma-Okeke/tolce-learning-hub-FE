@@ -6,7 +6,7 @@ export const Logo = () => {
             width="120"
             height="60"
             viewBox="0 0 173 93"
-            fill="none"
+            fill="green"
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
         >

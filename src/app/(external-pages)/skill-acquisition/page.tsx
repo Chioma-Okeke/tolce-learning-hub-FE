@@ -5,16 +5,18 @@ import { AnimatedSection } from "@/components/shared/animated-section";
 import { useRouter } from "next/navigation";
 import { useLockScreenStore } from "@/store/screen-lock-store";
 import { EnrollmentFormModal } from "@/modals/enrollment-form-modal";
-import { PROGRAM_BENEFITS, SKILLS_HIGHLIGHT } from "@/constants";
+import { PAGE_URLS, PROGRAM_BENEFITS, SKILLS_HIGHLIGHT } from "@/constants";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const SkillAcquisitionPage = () => {
     const router = useRouter();
-    const {isLocked} = useLockScreenStore()
+    const { isLocked } = useLockScreenStore()
 
     useEffect(() => {
         document.body.style.overflow = isLocked ? "hidden" : "auto";
 
-        return () => {document.body.style.overflow = "auto"};
+        return () => { document.body.style.overflow = "auto" };
     }, [isLocked]);
 
     useEffect(() => {
@@ -35,7 +37,7 @@ const SkillAcquisitionPage = () => {
                 <div className="absolute inset-0 bg-black/30" />
                 <AnimatedSection>
                     <div className="relative z-10 text-center px-4">
-                        <h1  className="font-bold text-center text-4xl sm:text-4xl md:text-5xl lg:text-6xl text-white w-full mb-5 md:mb-9 leading-12">
+                        <h1 className="font-bold text-center text-4xl sm:text-4xl md:text-5xl lg:text-6xl text-white w-full mb-5 md:mb-9 leading-12">
                             Skill Acquisition Program
                         </h1>
                         <p className="mt-6 text-xl md:text-2xl text-white leading-[1.5]">
@@ -163,13 +165,23 @@ const SkillAcquisitionPage = () => {
                             acquisition program
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <EnrollmentFormModal />
-                            <button
-                                onClick={navigateToServiceTiers}
-                                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-white/20 transition-colors ease-in-out duration-500"
-                            >
-                                Learn More
-                            </button>
+                            <EnrollmentFormModal>
+                                <Button
+                                    variant="secondary"
+                                    className="px-8 py-3 text-lg"
+                                >
+                                    Enroll Now
+                                </Button>
+                            </EnrollmentFormModal>
+                            <Link href={PAGE_URLS.OUR_SERVICES}>
+                                <Button
+                                    variant={"outline"}
+                                    onClick={navigateToServiceTiers}
+                                    className="px-8 py-3 border-white text-white hover:text-[#0020F1]"
+                                >
+                                    Learn More
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </AnimatedSection>

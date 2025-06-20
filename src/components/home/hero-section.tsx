@@ -3,10 +3,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import { Autoplay, EffectFade } from "swiper/modules";
-import { HERO_DATA } from "@/constants";
+import { HERO_DATA, PAGE_URLS } from "@/constants";
 
 import type { Swiper as SwiperClass } from "swiper";
 import { useRouter } from "next/navigation";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function HeroSection() {
     const swiperRef = React.useRef<SwiperClass | null>(null);
@@ -18,7 +20,7 @@ export default function HeroSection() {
         }
     };
 
-    function navigateToContact () {
+    function navigateToContact() {
         router.push("/contact")
     }
 
@@ -56,12 +58,16 @@ export default function HeroSection() {
                                         {text}
                                     </h1>
                                     <div className="flex flex-col md:flex-row items-center gap-3 mt-10">
-                                        <button className="w-[200px] h-[60px] border-2 border-white bg-transparent text-white font-semibold text-lg rounded-lg shadow-md hover:bg-[#141414] hover:border-none transition-colors ease-in-out duration-500">
-                                            Join Us
-                                        </button>
-                                        <button onClick={navigateToContact} className="w-[200px] h-[60px] text-white font-semibold text-lg rounded-lg shadow-md bg-[#0020F1] transition ease-linear hover:bg-[#080E7F] duration-300">
-                                            Contact Us
-                                        </button>
+                                        <Link href={PAGE_URLS.OUR_SERVICES}>
+                                            <Button variant={"outline"} className="border-white text-white hover:text-[#0020F1]">
+                                                Join Us
+                                            </Button>
+                                        </Link>
+                                        <Link href={PAGE_URLS.CONTACT_US}>
+                                            <Button onClick={navigateToContact} className="py-3 px-6">
+                                                Contact Us
+                                            </Button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
