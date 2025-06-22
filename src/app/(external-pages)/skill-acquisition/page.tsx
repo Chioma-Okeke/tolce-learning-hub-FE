@@ -55,7 +55,7 @@ const SkillAcquisitionPage = () => {
                         <h2 className="font-semibold text-2xl lg:text-4xl pb-[10px] lg:py-6 xl:text-[40px] text-center">
                             Our Skill Development Approach
                         </h2>
-                        <div className="grid md:grid-cols-2 gap-12">
+                        <div className="grid md:grid-cols-3 gap-12">
                             {SKILLS_HIGHLIGHT.map((category, index) => (
                                 <div
                                     key={index}

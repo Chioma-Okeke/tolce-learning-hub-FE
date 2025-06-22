@@ -14,7 +14,7 @@ export const PROGRAM_DATA: ProgramData = {
                     "National Youth Service Corp (NYSC) members",
                 ],
                 structure: {
-                    duration: "5-week course",
+                    duration: "6-week course",
                     format: "Virtual self-paced modules with bi-weekly live classes",
                     content: [
                         "Introduction to Communication Skills (Effective Email writing and Presentation skills)",
@@ -35,7 +35,7 @@ export const PROGRAM_DATA: ProgramData = {
             {
                 id: "professional-package",
                 title: "Professional Package",
-                price: "NGN40,000",
+                price: "NGN50,000",
                 targetAudience: [
                     "Individuals with little to no experience in digital tools and soft skills",
                     "Early Career Starters",
@@ -73,7 +73,7 @@ export const PROGRAM_DATA: ProgramData = {
             {
                 id: "advance-skills-package",
                 title: "Advanced Digital Skills",
-                price: "NGN50,000",
+                price: "NGN60,000",
                 targetAudience: [
                     "Individuals with basic knowledge looking to advance their digital and soft skills",
                     "This applies to students, fresh graduates, professionals, business owners, freelancers, etc",
@@ -115,7 +115,7 @@ export const SUMMARIZED_PROGRAM_DATA: ProgramData = {
                 price: "NGN 30,000",
                 features: [
                     "Target Audience: Designed for beginners, undergraduates, fresh graduates, and NYSC members aiming to build digital and soft skills.",
-                    "Program Structure: A 5-week virtual, self-paced course with bi-weekly live classes.",
+                    "Program Structure: A 6-week virtual, self-paced course with bi-weekly live classes.",
                     "Core Content: Covers communication skills, Excel basics, data analysis, dashboards, and interview preparation.",
                     "Interactive Learning: Includes real-world case studies, role plays, simulations, and weekly projects to build critical thinking and problem-solving skills.",
                     "Community Impact: Culminates in a group project to solve local problems, enhancing leadership and collaboration.",
@@ -125,7 +125,7 @@ export const SUMMARIZED_PROGRAM_DATA: ProgramData = {
             {
                 id: "professional-package",
                 title: "Professional Package",
-                price: "NGN 40,000",
+                price: "NGN 50,000",
                 features: [
                     "Target Audience: Ideal for beginners, early career starters, professionals looking to improve technical and soft skills, and those seeking mentorship opportunities.",
                     "Program Structure: An 8-week virtual, self-paced course with bi-weekly live classes.",
@@ -142,7 +142,7 @@ export const SUMMARIZED_PROGRAM_DATA: ProgramData = {
             {
                 id: "advanced-digital-skills",
                 title: "Advanced Digital Skills",
-                price: "NGN 50,000",
+                price: "NGN 60,000",
                 features: [
                     "Target Audience: Perfect for individuals with basic knowledge aiming to advance their digital and soft skills, including students, professionals, business owners, and freelancers.",
                     "Program Structure: An 8-week blended course combining online modules with live workshops for an interactive experience.",

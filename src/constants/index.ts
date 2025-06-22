@@ -244,8 +244,8 @@ export const TEAM_MEMBERS_IMAGES = [
 
 export const SKILLS_HIGHLIGHT = [
     {
-        title: "Technical Skills",
-        skills: ["Excel", "Power BI", "Data Analysis", "Presentation Tools"],
+        title: "Digital Skills",
+        skills: ["Microsoft Excel", "Power BI", "Data Analysis", "Presentation Tools", "Microsoft Word", "Microsoft Power Point", "Email writing", "Data Visualization", "Macroeconomic case studies"],
     },
     {
         title: "Soft Skills",
@@ -254,6 +254,17 @@ export const SKILLS_HIGHLIGHT = [
             "Teamwork",
             "Problem-Solving",
             "Critical Thinking",
+            "Presentation skills"
+        ],
+    },
+    {
+        title: "Other",
+        skills: [
+            "Job Interview preparations",
+            "Job Aptitude test and Assessment center preparations",
+            "Career clarity sessions",
+            "Accountability community for NYSC members",
+            "Career coaching"
         ],
     },
 ];

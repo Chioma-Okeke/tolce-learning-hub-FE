@@ -10,11 +10,13 @@ import { Menu, X } from "lucide-react";
 import { useSidebarStore } from "@/store/side-bar-store";
 import { Logo } from "./logo";
 import FocusAreaDropdown from "@/components/shared/header/focus-area-dropdown"
+import { useWindowWidth } from "@/hooks/use-width";
 
 export const Header = () => {
     const { isOpen, close, toggle } = useSidebarStore()
     const [showNavItems, setShowNavItems] = useState(false);
     const pathname = usePathname();
+    const width = useWindowWidth()
     const headerRef = useRef<HTMLDivElement | null>(null)
 
     useEffect(() => {
@@ -37,23 +39,28 @@ export const Header = () => {
         const handleScroll = () => {
             if (headerRef.current) {
                 if (window.scrollY > 30) {
+                    if (width > 1024) {
+
+                        headerRef.current.style.backgroundColor = "white";
+                    }
                     headerRef.current.style.position = "relative";
-                    headerRef.current.style.backgroundColor = "white";
                 } else {
+                    if (width > 1024) {
+                        headerRef.current.style.backgroundColor = "#00000054";
+                    }
                     headerRef.current.style.position = "fixed";
-                    headerRef.current.style.backgroundColor = "#00000054";
                 }
             }
         }
         window.addEventListener("scroll", handleScroll)
 
         return () => window.removeEventListener("scroll", handleScroll)
-    }, [])
+    }, [width])
 
     return (
         <header
             ref={headerRef}
-            className={`w-full px-8 pl-3 sm:px-20 z-40 fixed top-0 transition-all ease-in-out duration-500 bg-black/30 text-white`}
+            className={`w-full px-8 pl-3 sm:px-20 z-40 fixed top-0 transition-all ease-in-out duration-500 bg-transparent lg:bg-black/30 text-white`}
         >
             <div
                 className={`w-full flex flex-row items-center justify-between max-w-[1440px] mx-auto`}

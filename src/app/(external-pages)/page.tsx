@@ -170,9 +170,11 @@ const LandingPage = () => {
                         Join thousands of learners who have transformed
                         their careers with us.
                     </p>
-                    <Button className="px-8 py-4 ">
-                        Get Started Today
-                    </Button>
+                    <Link href={PAGE_URLS.OUR_SERVICES}>
+                        <Button className="px-8 py-4 ">
+                            Get Started Today
+                        </Button>
+                    </Link>
                 </AnimatedSection>
             </div>
         </div>

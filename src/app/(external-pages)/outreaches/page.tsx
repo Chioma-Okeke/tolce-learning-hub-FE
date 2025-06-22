@@ -9,9 +9,9 @@ import ImageDisplay from "@/modals/image-display";
 import { Counter } from "@/components/shared/Counter";
 
 const stats = [
-    { number: 10000, label: "Children Reached" },
-    { number: 200, label: "Outreach Events Organized" },
-    { number: 5000, label: "Volunteers Engaged" },
+    { number: 600, label: "Children Reached" },
+    { number: 9, label: "Outreach Events Organized" },
+    { number: 5, label: "Reading Clubs Set" },
 ];
 
 function Outreaches() {
