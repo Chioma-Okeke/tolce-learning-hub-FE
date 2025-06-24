@@ -3,21 +3,12 @@
 import { useEffect } from "react";
 import { AnimatedSection } from "@/components/shared/animated-section";
 import { useRouter } from "next/navigation";
-import { useLockScreenStore } from "@/store/screen-lock-store";
-import { EnrollmentFormModal } from "@/modals/enrollment-form-modal";
 import { PAGE_URLS, PROGRAM_BENEFITS, SKILLS_HIGHLIGHT } from "@/constants";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const SkillAcquisitionPage = () => {
     const router = useRouter();
-    const { isLocked } = useLockScreenStore()
-
-    useEffect(() => {
-        document.body.style.overflow = isLocked ? "hidden" : "auto";
-
-        return () => { document.body.style.overflow = "auto" };
-    }, [isLocked]);
 
     useEffect(() => {
         window.scrollTo({
@@ -165,14 +156,14 @@ const SkillAcquisitionPage = () => {
                             acquisition program
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <EnrollmentFormModal>
+                            <Link target="_blank" href={PAGE_URLS.ENROLLMENT_FORM}>
                                 <Button
                                     variant="secondary"
                                     className="px-8 py-3 text-lg"
                                 >
                                     Enroll Now
                                 </Button>
-                            </EnrollmentFormModal>
+                            </Link>
                             <Link href={PAGE_URLS.OUR_SERVICES}>
                                 <Button
                                     variant={"outline"}

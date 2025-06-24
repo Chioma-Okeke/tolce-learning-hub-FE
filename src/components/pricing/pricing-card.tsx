@@ -4,6 +4,7 @@ import { CheckCircle } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { PAGE_URLS } from "@/constants";
 
 type PricingCardProp = {
     index: number
@@ -30,7 +31,7 @@ export const PricingCard = ({ index, title, price, features }: PricingCardProp) 
                             {price}
                         </p>
                     </div>
-                    <Link className="z-20 relative" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfCWNXOaetvKbyxq6aNbnMCwDSJvS2yvviSc26M3AUxiqnGUQ/viewform">
+                    <Link className="z-20 relative" target="_blank" href={PAGE_URLS.ENROLLMENT_FORM}>
                         <Button
                             variant={index === 1 ? "secondary" : "default"}
                             className={`px-6 py-3 `}

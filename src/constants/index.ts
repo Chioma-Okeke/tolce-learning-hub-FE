@@ -22,6 +22,7 @@ export const PAGE_URLS = {
     CONTACT_US: "/contact-us",
     OUTREACHES: "/outreaches",
     SKILL_ACQUISITION: "/skill-acquisition",
+    ENROLLMENT_FORM: "https://docs.google.com/forms/d/e/1FAIpQLSfCWNXOaetvKbyxq6aNbnMCwDSJvS2yvviSc26M3AUxiqnGUQ/viewform",
     NEWSLETTER_SUBSCRIPTION: "https://tolce.substack.com/subscribe?utm_source=menu&simple=true&next=https%3A%2F%2Ftolce.substack.com%2Fp%2Fwelcome-on-board"
 }
 

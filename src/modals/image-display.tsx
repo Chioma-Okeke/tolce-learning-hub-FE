@@ -46,17 +46,16 @@ function ImageDisplay({
         <Dialog open={isOpen} onOpenChange={(open) => {
             setIsOpen(open)
             if (!open && isLocked) {
-                console.log("I ran", isLocked)
                 toggleLock()
             }
         }}>
             <DialogTrigger>
                 <div
                     key={imageIndex}
-                    className="relative group overflow-hidden rounded-lg w-full h-[225px]"
+                    className="relative group overflow-hidden rounded-lg w-full h-[225px] cursor-pointer"
                 >
                     {isLoading && <div className="animate-pulse bg-gray-200 w-full h-full"></div>}
-                    <div className='relative overflow-hidden w-full h-full hover:scale-110'>
+                    <div className='relative overflow-hidden w-full h-full hover:scale-110 bg-gray-300'>
                         <Image
                             onClick={() => {
                                 setFocusedIndex(
@@ -69,7 +68,7 @@ function ImageDisplay({
                                 }`}
                             fill
                             sizes='100vw'
-                            className={`object-cover object-center transition-opacity duration-500 ${isLoading ? "opacity-0" : "opacity-100 group-hover:scale-110"}`}
+                            className={`object-cover object-center transition-all duration-500 ${isLoading ? "opacity-0" : "opacity-100 group-hover:scale-110"}`}
                             onLoad={() => {
                                 if (setIsLoading) setIsLoading(false)
                             }
@@ -86,7 +85,7 @@ function ImageDisplay({
                         <button
                             onClick={handlePrevious}
                             aria-label="Previous Member"
-                            className="hidden lg:block absolute left-4 z-10 bg-gray-800 hover:bg-gray-600 text-white rounded-full p-2 transition duration-300"
+                            className="hidden lg:block cursor-pointer absolute left-4 z-10 bg-gray-800 hover:bg-gray-600 text-white rounded-full p-2 transition duration-300"
                         >
                             <ChevronLeft size={28} />
                         </button>
@@ -113,7 +112,7 @@ function ImageDisplay({
                         <button
                             onClick={handleNext}
                             aria-label="Next Member"
-                            className="hidden lg:block absolute right-4 z-10 bg-gray-800 hover:bg-gray-600 text-white rounded-full p-2 transition duration-300"
+                            className="hidden lg:block cursor-pointer absolute right-4 z-10 bg-gray-800 hover:bg-gray-600 text-white rounded-full p-2 transition duration-300"
                         >
                             <ChevronRight size={28} />
                         </button>

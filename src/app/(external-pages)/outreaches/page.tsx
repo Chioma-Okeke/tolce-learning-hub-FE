@@ -8,6 +8,8 @@ import { useSidebarStore } from "@/store/side-bar-store";
 import ImageDisplay from "@/modals/image-display";
 import { Counter } from "@/components/shared/Counter";
 import { useLockScreenStore } from "@/store/screen-lock-store";
+import { Button } from "@/components/ui/button";
+import { useWindowWidth } from "@/hooks/use-width";
 
 const stats = [
     { number: 600, label: "Children Reached" },
@@ -17,9 +19,10 @@ const stats = [
 
 function Outreaches() {
     const [animate, setAnimate] = useState(false);
-    const {isLocked, toggleLock} = useLockScreenStore()
+    const { isLocked, toggleLock } = useLockScreenStore()
     const [isLoading, setIsLoading] = useState(true)
     const { makeTransparent } = useSidebarStore()
+    const width = useWindowWidth()
     const [visibleImagesLimit, setVisibleImagesLimit] = useState(4);
     const [focusedIndex, setFocusedIndex] = useState<number>(0);
     const imageContainerRef = useRef<HTMLDivElement>(null);
@@ -47,12 +50,12 @@ function Outreaches() {
             top: 0,
             behavior: "smooth",
         });
-
-        if (window.innerWidth > 1024) {
+        if (width && width > 1024) {
             setVisibleImagesLimit(6);
+        } else {
+            setVisibleImagesLimit(4)
         }
-        toggleLock()
-    }, [toggleLock]);
+    }, [width]);
 
     const revealPageContent = () => {
         setAnimate(true);
@@ -63,7 +66,7 @@ function Outreaches() {
     };
 
     function loadFullImageList(desktopLimit: number, mobileLimit: number) {
-        const limit = window.innerWidth > 1024 ? desktopLimit : mobileLimit;
+        const limit = width > 1024 ? desktopLimit : mobileLimit;
 
         setVisibleImagesLimit((prevLimit) =>
             prevLimit === galleryCategoriesImages.length
@@ -73,7 +76,7 @@ function Outreaches() {
     }
 
     return (
-        <main className="relative">
+        <main className={"relative"}>
             <AnimatePresence mode="wait">
                 {!animate && (
                     <motion.div
@@ -106,12 +109,12 @@ function Outreaches() {
                             </div>
                             {galleryCategoriesImages &&
                                 galleryCategoriesImages.length > 0 && (
-                                    <button
+                                    <Button variant={"outline"}
                                         onClick={revealPageContent}
-                                        className="w-[200px] h-[60px] border-2 text-white font-semibold text-lg lg:text-2xl rounded-lg shadow-md hover:shadow-white shadow- transition-colors"
+                                        className="border-white text-white hover:text-[#0020F1] lg:text-xl"
                                     >
                                         Explore
-                                    </button>
+                                    </Button>
                                 )}
                         </div>
                     </motion.div>
@@ -120,7 +123,7 @@ function Outreaches() {
             {animate && (
                 <div
                     key="main-content"
-                    className={`absolute top-0 w-full ${animate ? "h-auto" : "h-0"
+                    className={`relative w-full ${animate ? "h-auto" : "h-0"
                         } bg-white`}
                 >
                     {/* Highlights Section */}
@@ -163,8 +166,9 @@ function Outreaches() {
                                     <AnimatePresence>
                                         {galleryCategoriesImages
                                             .slice(0, visibleImagesLimit)
-                                            .map((image, imageIndex) => (
-                                                <ImageDisplay
+                                            .map((image, imageIndex) => {
+                                                console.log(visibleImagesLimit, "limit")
+                                                return <ImageDisplay
                                                     key={imageIndex}
                                                     setFocusedIndex={setFocusedIndex}
                                                     focusedIndex={focusedIndex}
@@ -173,7 +177,7 @@ function Outreaches() {
                                                     isLoading={isLoading}
                                                     setIsLoading={setIsLoading}
                                                 />
-                                            ))}
+                                            })}
                                     </AnimatePresence>
                                 </div>
                                 {
@@ -183,7 +187,7 @@ function Outreaches() {
                                             initial={{ scale: 1 }}
                                             whileHover={{ scale: 1.05 }}
                                             whileTap={{ scale: 0.95 }}
-                                            className="text-white px-8 py-3 rounded-lg font-semibold text-lg w-fit bg-[#0020F1] transition ease-linear hover:bg-[#080E7F] duration-300"
+                                            className="text-white cursor-pointer px-8 py-3 rounded-lg font-semibold text-lg w-fit bg-[#0020F1] transition ease-linear hover:bg-[#080E7F] duration-300"
                                         >
                                             {visibleImagesLimit ===
                                                 galleryCategoriesImages.length
@@ -197,7 +201,7 @@ function Outreaches() {
                     </section>
 
                     {/* Featured Story Section */}
-                    {/* <section className="relative h-[500px]">
+                    <section className="relative h-[400px]">
                         <AnimatedSection className="h-full">
                             <div className="h-full">
                                 <video
@@ -208,47 +212,29 @@ function Outreaches() {
                                     className="w-full h-full object-cover object-center -z-10 background-video"
                                 >
                                     <source
-                                        src={videoEmpowerment}
+                                        src={'/outreaches/outreach-section-video.mp4'}
                                         type="video/mp4"
                                     />
                                 </video>
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-10">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10">
                                     <div className="max-w-7xl mx-auto px-4 h-full flex flex-col justify-end pb-16">
                                         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-                                            Empowering Children in Rural
-                                            Communities
+                                            Be a Part of the Change
                                         </h2>
                                         <p className="text-lg sm:text-xl text-white mb-6">
-                                            How our skill training programs are
-                                            changing lives.
+                                            Join our mission to empower communities
+                                            through impactful outreach.
                                         </p>
-                                        <button className="text-white px-8 py-3 rounded-lg font-semibold text-lg w-fit bg-[#0020F1] transition ease-linear hover:bg-[#080E7F] duration-300">
-                                            Read More
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </AnimatedSection>
-                    </section> */}
 
-                    {/* Call-to-Action Section */}
-                    <section className="bg-gradient-to-r from-[#0020F1] to-[#080E7F] py-12 sm:py-20">
-                        <AnimatedSection>
-                            <div className="max-w-7xl mx-auto px-4 text-center">
-                                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-                                    Be a Part of the Change
-                                </h2>
-                                <p className="text-lg sm:text-xl text-white mb-8">
-                                    Join our mission to empower communities
-                                    through impactful outreach.
-                                </p>
-                                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                    <button className="bg-white text-[#0020F1] px-8 py-3 rounded-lg font-semibold text-lg hover:bg-gray-200 transition-colors ease-in-out duration-300">
-                                        Volunteer With Us
-                                    </button>
-                                    <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-white/20 transition-colors ease-in-out duration-300">
-                                        Donate Now
-                                    </button>
+                                        <div className="flex flex-col sm:flex-row gap-4 items-center">
+                                            <Button variant={"secondary"}>
+                                                Volunteer With Us
+                                            </Button>
+                                            <Button>
+                                                Donate Now
+                                            </Button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </AnimatedSection>

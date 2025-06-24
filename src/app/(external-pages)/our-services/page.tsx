@@ -6,7 +6,8 @@ import Questions from "@/components/shared/faq/FAQ";
 import SellingPoint from "@/components/service-page/selling-point";
 import ServiceTiers from "@/components/service-page/service-tiers";
 import { Button } from "@/components/ui/button";
-import { EnrollmentFormModal } from "@/modals/enrollment-form-modal";
+import Link from "next/link";
+import { PAGE_URLS } from "@/constants";
 
 const ServicePage = () => {
     const serviceTierRef = useRef<HTMLDivElement>(null);
@@ -43,14 +44,14 @@ const ServicePage = () => {
                         today&apos;s digital world.
                     </p>
                     <div className="mt-10 flex flex-col md:flex-row gap-4 items-center justify-center">
-                        <EnrollmentFormModal>
+                        <Link target="_blank" href={PAGE_URLS.ENROLLMENT_FORM}>
                             <Button
                                 variant="secondary"
                                 className="px-8 text-lg"
                             >
                                 Join Now
                             </Button>
-                        </EnrollmentFormModal>
+                        </Link>
                         <Button
                             variant={"outline"}
                             onClick={scrollToServices}

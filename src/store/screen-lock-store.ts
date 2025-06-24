@@ -6,6 +6,6 @@ type LockScreenStore = {
 }
 
 export const useLockScreenStore = create<LockScreenStore>((set) => ({
-    isLocked: false,
+    isLocked: true,
     toggleLock: () => set((state) => ({isLocked: !state.isLocked}))
 }))
