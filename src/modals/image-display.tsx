@@ -1,13 +1,13 @@
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
 import { galleryCategoriesImages } from '@/constants';
+import { useLockScreenStore } from '@/store/screen-lock-store';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
-import React from 'react'
+import React, { useState } from 'react'
 
 type ImageDisplayProps = {
     setFocusedIndex: (index: number) => void,
     focusedIndex: number,
-    setIsLocked: (val: boolean) => void
     imageIndex: number
     image: {
         id: number;
@@ -20,12 +20,13 @@ type ImageDisplayProps = {
 function ImageDisplay({
     setFocusedIndex,
     focusedIndex,
-    setIsLocked,
     imageIndex,
     image,
     isLoading,
     setIsLoading,
 }: ImageDisplayProps) {
+    const { isLocked, toggleLock } = useLockScreenStore()
+    const [isOpen, setIsOpen] = useState(false)
 
     const expandedImage =
         focusedIndex !== null && galleryCategoriesImages[focusedIndex];
@@ -42,35 +43,39 @@ function ImageDisplay({
         );
     }
     return (
-        <Dialog>
+        <Dialog open={isOpen} onOpenChange={(open) => {
+            setIsOpen(open)
+            if (!open && isLocked) {
+                console.log("I ran", isLocked)
+                toggleLock()
+            }
+        }}>
             <DialogTrigger>
                 <div
                     key={imageIndex}
                     className="relative group overflow-hidden rounded-lg w-full h-[225px]"
                 >
                     {isLoading && <div className="animate-pulse bg-gray-200 w-full h-full"></div>}
-                    <Image
-                        onClick={() => {
-                            setFocusedIndex(
-                                imageIndex
-                            );
-                            setIsLocked(true);
-                        }}
-                        src={image.imageLink}
-                        alt={`image-${imageIndex + 1
-                            }`}
-                        loading="lazy"
-                        width={100}
-                        height={100}
-                        className="w-full h-full object-cover transition-opacity duration-500 opacity-0 hover:scale-110"
-                        onLoad={(e) => {
-                            if (setIsLoading) setIsLoading(false)
-                            e.currentTarget.classList.remove(
-                                "opacity-0"
-                            )
-                        }
-                        }
-                    />
+                    <div className='relative overflow-hidden w-full h-full hover:scale-110'>
+                        <Image
+                            onClick={() => {
+                                setFocusedIndex(
+                                    imageIndex
+                                );
+                                toggleLock();
+                            }}
+                            src={image.imageLink}
+                            alt={`image-${imageIndex + 1
+                                }`}
+                            fill
+                            sizes='100vw'
+                            className={`object-cover object-center transition-opacity duration-500 ${isLoading ? "opacity-0" : "opacity-100 group-hover:scale-110"}`}
+                            onLoad={() => {
+                                if (setIsLoading) setIsLoading(false)
+                            }
+                            }
+                        />
+                    </div>
                 </div>
             </DialogTrigger>
             <DialogContent>
@@ -88,18 +93,20 @@ function ImageDisplay({
 
                         {/* Image */}
                         {expandedImage && (
-                            <Image
-                                onClick={() => {
-                                    setFocusedIndex(0);
-                                    setIsLocked(false);
-                                }}
-                                src={expandedImage.imageLink}
-                                alt=""
-                                loading="lazy"
-                                width={100}
-                                height={100}
-                                className="object-contain w-full max-w-3xl h-auto max-h-[80vh] rounded-md mx-auto"
-                            />
+                            <div className='relative w-full max-w-3xl h-[80vh] max-h-[80vh] rounded-md mx-auto overflow-hidden'>
+                                <Image
+                                    onClick={() => {
+                                        setFocusedIndex(0);
+                                        toggleLock();
+                                    }}
+                                    src={expandedImage.imageLink}
+                                    alt=""
+                                    fill
+                                    sizes='100vw'
+                                    priority
+                                    className="object-cover"
+                                />
+                            </div>
                         )}
 
                         {/* Next Button */}

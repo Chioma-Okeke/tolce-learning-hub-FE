@@ -98,7 +98,7 @@ export const FOCUS_AREAS = [
     },
     { 
         path: "/outreaches",
-        imgSrc: "https://res.cloudinary.com/djrp3aaq9/image/upload/v1739048056/outreach-1.jpg",
+        imgSrc: "https://res.cloudinary.com/djrp3aaq9/image/upload/v1738848638/stbc01fq8i8043ulxqw6.jpg",
         label: "Outreaches",
         description: "Empowering students with technical expertise and essential soft skills to excel in data-driven decision-making and thrive in dynamic workplace environments." 
     },
@@ -203,6 +203,56 @@ export const galleryCategoriesImages = [
         id: 8,
         imageLink:
             "https://res.cloudinary.com/djrp3aaq9/image/upload/v1739048059/outreach-8.jpg",
+    },
+    {
+        id: 9,
+        imageLink:
+            "https://res.cloudinary.com/djrp3aaq9/image/upload/v1750725141/x0F4_tNP3GVKasLQ3QV9FZvcb-eHZW3iPy7hEzIpu48__plaintext_638850166608624402_oyismr.jpg",
+    },
+    {
+        id: 10,
+        imageLink:
+            "https://res.cloudinary.com/djrp3aaq9/image/upload/v1750725139/JKB9kwE8IPCFf1KaQfKsc-fJbGr4gPxRkaPdcrfs2M4__plaintext_638850166611081636_dxcnft.jpg",
+    },
+    {
+        id: 11,
+        imageLink:
+            "https://res.cloudinary.com/djrp3aaq9/image/upload/v1750725139/oUBYqW1sEbEjeFyxnDXzFH7XLcudVhGUgXxP93goYlE__plaintext_638850166610491132_qluh5n.jpg",
+    },
+    {
+        id: 12,
+        imageLink:
+            "https://res.cloudinary.com/djrp3aaq9/image/upload/v1750725135/RBmxeUWx6ukG8WW-I--3Eaap7xPtIq1PpV92tunvlNw__plaintext_638850166611964564_jolzio.jpg",
+    },
+    {
+        id: 13,
+        imageLink:
+            "https://res.cloudinary.com/djrp3aaq9/image/upload/v1750725135/a8CIl6sklucBAC8CsA-TsF2IT9CGaF64iH7Gul5FyDs__plaintext_638850166609470818_jsxazv.jpg",
+    },
+    {
+        id: 14,
+        imageLink:
+            "https://res.cloudinary.com/djrp3aaq9/image/upload/v1750725134/8tjYVZrHgzc1vrm0cqIzsQO4V2zd8rLnaxbFGIwY5K4__plaintext_638850166606910324_kfw7mn.jpg",
+    },
+    {
+        id: 15,
+        imageLink:
+            "https://res.cloudinary.com/djrp3aaq9/image/upload/v1750725133/GbyoKkSdoljsQQqfOFCQXWogPwtCg65UynSTc4a7ylw__plaintext_638850166611561101_i20jzb.jpg",
+    },
+    {
+        id: 16,
+        imageLink:
+            "https://res.cloudinary.com/djrp3aaq9/image/upload/v1750725131/DC4trnxNSNMHR8mfuzBS0kUtj4mRtoyCsoN_686PeLY__plaintext_638850166608036592_ovfqs0.jpg",
+    },
+    {
+        id: 17,
+        imageLink:
+            "https://res.cloudinary.com/djrp3aaq9/image/upload/v1750725131/0Zd1FPKFow4jHz5lmTfuhK6FfivAbZld_bo5xvFsveA__plaintext_638850166607402167_vuuy95.jpg",
+    },
+    {
+        id: 18,
+        imageLink:
+            "https://res.cloudinary.com/djrp3aaq9/image/upload/v1750725133/Jmhw_C_9OoqIUcuE39eQ1lIh2rE-YQT2IZTa0ir-cgM__plaintext_638850166612380082_dmsocp.jpg",
     },
 ];
 

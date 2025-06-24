@@ -30,7 +30,7 @@ const ServicePage = () => {
     return (
         <div className="w-full">
             {/* Hero Section */}
-            <div className="relative py-12 sm:py-20 w-full bg-gradient-to-r from-[#0020F1] to-[#080E7F] flex items-center justify-center">
+            <div className="relative py-20 sm:py-20 w-full bg-gradient-to-r from-[#0020F1] to-[#080E7F] flex items-center justify-center">
                 <div className="absolute inset-0 bg-black/30" />{" "}
                 {/* Overlay */}
                 <AnimatedSection className="relative z-10 text-center max-w-4xl mx-auto px-4">

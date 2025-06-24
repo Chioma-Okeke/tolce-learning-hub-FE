@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState, useRef } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { HEADER_LINKS } from "@/constants";
 import { cn } from "@/lib/utils";
@@ -18,6 +18,14 @@ export const Header = () => {
     const pathname = usePathname();
     const width = useWindowWidth()
     const headerRef = useRef<HTMLDivElement | null>(null)
+    const router = useRouter()
+
+    const handleNavigation = () => {
+        router.push("/")
+        if (width < 1024 && isOpen) {
+            close()
+        }
+    }
 
     useEffect(() => {
         const timeoutId = setTimeout(() => {
@@ -107,9 +115,9 @@ export const Header = () => {
                 `}
                     >
                         <div className="flex justify-between items-center pr-4 mb-8">
-                            <Link href="/">
+                            <button onClick={handleNavigation}>
                                 <Logo />
-                            </Link>
+                            </button>
                             <div
                                 onClick={() => close()}
                                 className="block lg:hidden"

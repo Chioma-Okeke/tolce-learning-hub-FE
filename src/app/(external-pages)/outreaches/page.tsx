@@ -7,6 +7,7 @@ import { AnimatedSection } from "@/components/shared/animated-section";
 import { useSidebarStore } from "@/store/side-bar-store";
 import ImageDisplay from "@/modals/image-display";
 import { Counter } from "@/components/shared/Counter";
+import { useLockScreenStore } from "@/store/screen-lock-store";
 
 const stats = [
     { number: 600, label: "Children Reached" },
@@ -16,7 +17,7 @@ const stats = [
 
 function Outreaches() {
     const [animate, setAnimate] = useState(false);
-    const [isLocked, setIsLocked] = useState(true);
+    const {isLocked, toggleLock} = useLockScreenStore()
     const [isLoading, setIsLoading] = useState(true)
     const { makeTransparent } = useSidebarStore()
     const [visibleImagesLimit, setVisibleImagesLimit] = useState(4);
@@ -50,14 +51,14 @@ function Outreaches() {
         if (window.innerWidth > 1024) {
             setVisibleImagesLimit(6);
         }
-    }, []);
+        toggleLock()
+    }, [toggleLock]);
 
     const revealPageContent = () => {
         setAnimate(true);
         makeTransparent(false)
         setTimeout(() => {
-            console.log("I ran");
-            setIsLocked(false);
+            toggleLock();
         }, 2000);
     };
 
@@ -165,7 +166,6 @@ function Outreaches() {
                                             .map((image, imageIndex) => (
                                                 <ImageDisplay
                                                     key={imageIndex}
-                                                    setIsLocked={setIsLocked}
                                                     setFocusedIndex={setFocusedIndex}
                                                     focusedIndex={focusedIndex}
                                                     image={image}

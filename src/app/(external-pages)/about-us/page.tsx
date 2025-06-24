@@ -23,7 +23,7 @@ const About = () => {
     return (
         <>
             <div className="relative">
-                <AnimatedSection className="w-[90%] mx-auto py-12 md:py-20">
+                <AnimatedSection className="w-[90%] mx-auto py-20 md:py-20">
                     <div className="w-full flex flex-col lg:flex-row lg:items-center">
                         <h1 className="text-[28px] lg:text-4xl xl:text-5xl font-bold lg:w-[40%] lg:pl-10">
                             Why we exist?
@@ -52,7 +52,7 @@ const About = () => {
                     }}
                 >
                     <AnimatedSection
-                        className={`max-w-[1800px] py-12 sm:py-20 flex flex-col-reverse sm:flex-row items-center w-[90%] lg:w-full h-[450px] 2xl:h-[550px] mx-auto relative ${isSmallScreen
+                        className={`max-w-[1800px] py-12 sm:py-20 flex flex-col-reverse md:flex-row items-center w-[90%] lg:w-full h-[450px] 2xl:h-[550px] mx-auto relative ${isSmallScreen
                             ? "bg-none h-fit gap-5"
                             : "bg-cover h-fit"
                             }`}
@@ -72,14 +72,13 @@ const About = () => {
                                 skill gap between classroom and corporate world.
                             </p>
                         </div>
-                        <div className="flex-1">
+                        <div className="md:flex-1 bg-white w-full h-[300px] mx-auto lg:h-[350px] xl:h-[400px] 2xl:h-[450px] shadow-lg relative overflow-hidden">
                             <Image
                                 src="https://res.cloudinary.com/djrp3aaq9/image/upload/v1739046329/core-values-3.jpg"
-                                width={100}
-                                height={100}
                                 alt="Our Team"
-                                loading="lazy"
-                                className="bg-white object-cover object-center lg:w-[80%] mx-auto lg:h-[350px] xl:h-[400px] 2xl:h-[450px] shadow-lg"
+                                fill
+                                sizes="100vw"
+                                className="object-cover object-center"
                             />
                         </div>
                     </AnimatedSection>

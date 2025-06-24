@@ -47,7 +47,7 @@ const HeroSection = () => {
                         >
                             <div className="w-[90%] mx-auto max-w-[1440px] z-20 flex items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                                 <div className="ml-3 mt-5">
-                                    <h1 className="font-bold w-full max-w-[750px] text-center md:text-start text-4xl sm:text-4xl md:text-5xl lg:leading-14 text-white mb-5 md:mb-9">
+                                    <h1 className="font-bold w-full max-w-[750px] text-center md:text-start text-4xl md:text-5xl lg:leading-14 text-white mb-5 md:mb-9">
                                         {text}
                                     </h1>
                                     <div className="flex flex-col md:flex-row items-center gap-3 mt-10">
@@ -81,7 +81,7 @@ const HeroSection = () => {
                     HERO_DATA.map((_, index) => (
                         <Button onClick={() => {
                             swiperRef.current?.slideToLoop(index)
-                        }} key={index} variant={currentIndex === index ? "default" : "outline"} className="size-4 rounded-full p-1"></Button>
+                        }} key={index} variant={currentIndex === index ? "default" : "outline"} className="size-4 rounded-full p-1 transition-colors"></Button>
                     ))
                 )
                 }

@@ -51,14 +51,13 @@ const LandingPage = () => {
                                 </Button>
                             </Link>
                         </div>
-                        <div className="rounded-2xl overflow-hidden">
+                        <div className="relative w-full h-[400px] rounded-2xl shadow-lg bg-white overflow-hidden">
                             <Image
-                                src="/focusing-image.png"
+                                src="https://res.cloudinary.com/djrp3aaq9/image/upload/v1739046329/core-values-3.jpg"
                                 alt="Team collaboration"
-                                loading="lazy"
-                                width={100}
-                                height={100}
-                                className="w-full h-[400px] rounded-2xl shadow-lg bg-white object-cover object-center"
+                                fill
+                                sizes="100vw"
+                                className="object-cover object-center"
                             />
                         </div>
                     </motion.div>
@@ -80,16 +79,17 @@ const LandingPage = () => {
                                 transition={{
                                     duration: 0.8,
                                 }}
-                                className="bg-white rounded-xl shadow-lg relative"
+                                className="bg-white rounded-xl shadow-lg relative h-fit"
                             >
-                                <Image
-                                    src={program.imgSrc}
-                                    width={100}
-                                    height={100}
-                                    alt={program.label}
-                                    loading="lazy"
-                                    className="bg-white object-cover object-center w-full max-h-[402px] rounded-xl"
-                                />
+                                <div className="bg-white w-full h-[402px] max-h-[402px] rounded-xl relative overflow-hidden">
+                                    <Image
+                                        src={program.imgSrc}
+                                        alt={program.label}
+                                        fill
+                                        sizes="100vw"
+                                        className="object-cover object-center"
+                                    />
+                                </div>
                                 <div className="py-8 px-4 flex flex-col">
                                     <h3 className="text-xl font-bold text-[#333333] mb-4">
                                         {program.label
@@ -171,7 +171,7 @@ const LandingPage = () => {
                         their careers with us.
                     </p>
                     <Link href={PAGE_URLS.OUR_SERVICES}>
-                        <Button className="px-8 py-4 ">
+                        <Button variant="secondary" className="px-8 py-4 ">
                             Get Started Today
                         </Button>
                     </Link>
