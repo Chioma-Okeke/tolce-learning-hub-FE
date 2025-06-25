@@ -2,14 +2,15 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { galleryCategoriesImages } from "@/constants";
-import { AnimatedSection } from "@/components/shared/animated-section";
-import { useSidebarStore } from "@/store/side-bar-store";
-import ImageDisplay from "@/modals/image-display";
-import { Counter } from "@/components/shared/Counter";
-import { useLockScreenStore } from "@/store/screen-lock-store";
+
 import { Button } from "@/components/ui/button";
+import ImageDisplay from "@/modals/image-display";
 import { useWindowWidth } from "@/hooks/use-width";
+import { Counter } from "@/components/shared/Counter";
+import { galleryCategoriesImages } from "@/constants";
+import { useSidebarStore } from "@/store/side-bar-store";
+import { useLockScreenStore } from "@/store/screen-lock-store";
+import { AnimatedSection } from "@/components/shared/animated-section";
 
 const stats = [
     { number: 600, label: "Children Reached" },
@@ -46,10 +47,6 @@ function Outreaches() {
     }, [isLocked]);
 
     useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
         if (width && width > 1024) {
             setVisibleImagesLimit(6);
         } else {
@@ -226,7 +223,7 @@ function Outreaches() {
                                             through impactful outreach.
                                         </p>
 
-                                        <div className="flex flex-col sm:flex-row gap-4 items-center">
+                                        <div className="flex border-2 border-red-500 flex-col sm:flex-row gap-4 items-center">
                                             <Button variant={"secondary"}>
                                                 Volunteer With Us
                                             </Button>

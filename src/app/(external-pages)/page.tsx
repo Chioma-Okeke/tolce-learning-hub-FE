@@ -1,15 +1,16 @@
 "use client"
 
 import React from "react";
-import { FEATURES, FOCUS_AREAS, PAGE_URLS } from "@/constants";
-import Image from "next/image";
-import { AnimatedSection } from "@/components/shared/animated-section";
-import Testimonials from "@/components/home/testimonials";
-import HeroSection from "@/components/home/hero-section";
 import Link from "next/link";
-import { Counter } from "@/components/shared/Counter";
-import { Button } from "@/components/ui/button";
+import Image from "next/image";
+
 import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button";
+import { Counter } from "@/components/shared/Counter";
+import HeroSection from "@/components/home/hero-section";
+import Testimonials from "@/components/home/testimonials";
+import { FEATURES, FOCUS_AREAS, PAGE_URLS } from "@/constants";
+import { AnimatedSection } from "@/components/shared/animated-section";
 
 const LandingPage = () => {
 

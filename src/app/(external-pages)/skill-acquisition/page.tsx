@@ -1,25 +1,12 @@
 "use client"
 
-import { useEffect } from "react";
-import { AnimatedSection } from "@/components/shared/animated-section";
-import { useRouter } from "next/navigation";
-import { PAGE_URLS, PROGRAM_BENEFITS, SKILLS_HIGHLIGHT } from "@/constants";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
+import { Button } from "@/components/ui/button";
+import { AnimatedSection } from "@/components/shared/animated-section";
+import { PAGE_URLS, PROGRAM_BENEFITS, SKILLS_HIGHLIGHT } from "@/constants";
+
 const SkillAcquisitionPage = () => {
-    const router = useRouter();
-
-    useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
-    }, []);
-
-    function navigateToServiceTiers() {
-        router.push("/services");
-    }
 
     return (
         <div className="w-full">
@@ -167,7 +154,6 @@ const SkillAcquisitionPage = () => {
                             <Link href={PAGE_URLS.OUR_SERVICES}>
                                 <Button
                                     variant={"outline"}
-                                    onClick={navigateToServiceTiers}
                                     className="px-8 py-3 w-[135px] border-white text-white hover:text-[#0020F1]"
                                 >
                                     Learn More

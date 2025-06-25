@@ -26,11 +26,17 @@ const generalSans = localFont({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://tolcelearninghub.com'),
+  metadataBase: new URL('https://tolce-learning-hub.vercel.app/'),
   title: {
     default: 'Tolce Learning Hub',
     template: 'Tolce Learning Hub | %s',
   },
+  authors: [
+    {
+      name: "Tolce Learning Hub",
+      url: "https://tolce-learning-hub.vercel.app/"
+    }
+  ],
   description:
     'Tolce Learning Hub empowers learners with high-quality digital education, expert-led tutorials, and skill-building resources tailored for African creators and professionals.',
   keywords: [
@@ -43,14 +49,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_NG',
-    url: 'https://tolcelearninghub.com',
+    url: 'https://tolce-learning-hub.vercel.app/',
     siteName: 'Tolce Learning Hub',
     title: 'Tolce Learning Hub',
     description:
       'Tolce Learning Hub empowers learners with high-quality digital education, expert-led tutorials, and skill-building resources tailored for African creators and professionals.',
     images: [
       {
-        url: 'https://res.cloudinary.com/djrp3aaq9/image/upload/v1717777777/tolce-learning-banner.png',
+        url: 'https://res.cloudinary.com/djrp3aaq9/image/upload/v1750851276/tolce_learning_hub_logo_lglxq1.png',
         width: 1200,
         height: 630,
         alt: 'Tolce Learning Hub Banner',
@@ -64,7 +70,7 @@ export const metadata: Metadata = {
       'Tolce Learning Hub empowers learners with high-quality digital education, expert-led tutorials, and skill-building resources tailored for African creators and professionals.',
     creator: '@tolcelearning',
     images: [
-      'https://res.cloudinary.com/djrp3aaq9/image/upload/v1717777777/tolce-learning-banner.png',
+      'https://res.cloudinary.com/djrp3aaq9/image/upload/v1750851276/tolce_learning_hub_logo_lglxq1.png',
     ],
   },
   icons: {

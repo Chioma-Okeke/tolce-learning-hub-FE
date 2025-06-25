@@ -1,23 +1,17 @@
 "use client"
 
-import { useEffect, useRef } from "react";
-import { AnimatedSection } from "@/components/shared/animated-section";
+import Link from "next/link";
+import { useRef } from "react";
+
+import { PAGE_URLS } from "@/constants";
+import { Button } from "@/components/ui/button";
 import Questions from "@/components/shared/faq/FAQ";
 import SellingPoint from "@/components/service-page/selling-point";
 import ServiceTiers from "@/components/service-page/service-tiers";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { PAGE_URLS } from "@/constants";
+import { AnimatedSection } from "@/components/shared/animated-section";
 
 const ServicePage = () => {
     const serviceTierRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
-    });
 
     const scrollToServices = () => {
         if (serviceTierRef.current) {

@@ -1,45 +1,10 @@
-"use client"
-
-import { useForm, FormProvider } from "react-hook-form";
-import { useEffect, useState } from "react";
 import Image from "next/image";
-import { AnimatedSection } from "@/components/shared/animated-section";
-import { Mail, Phone } from "lucide-react";
-import ContactForm from "@/forms/contact-form";
 
-const contactInfo = [
-    {
-        title: "Email Support",
-        description: "Our team can respond in real time.",
-        Icon: Mail,
-        contact: "tolcelearninghub@gmail.com",
-    },
-    {
-        title: "Call Us Directly",
-        description: "Available during work hours",
-        Icon: Phone,
-        contact: "+234 814 627 3427",
-    },
-];
+import ContactForm from "@/forms/contact-form";
+import { CONTACT_INFORMATION } from "@/constants";
+import { AnimatedSection } from "@/components/shared/animated-section";
 
 function ContactUs() {
-    const methods = useForm();
-    const [showSuccessModal, setShowSuccessModal] = useState(false);
-
-    useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
-    }, []);
-
-    useEffect(() => {
-        const timeoutId = setTimeout(() => {
-            setShowSuccessModal(false);
-        }, 3000);
-
-        return () => clearTimeout(timeoutId);
-    }, [showSuccessModal]);
 
     return (
         <AnimatedSection className="w-[90%] max-w-[1100px] md:w-[95%] mx-auto my-2">
@@ -51,16 +16,15 @@ function ContactUs() {
                         fill
                         sizes="100vw"
                         className="object-cover object-center"
+                        priority
                     />
                 </div>
                 <div className="md:flex-1">
-                    <FormProvider {...methods}>
-                        <ContactForm />
-                    </FormProvider>
+                    <ContactForm />
                 </div>
             </div>
             <div className="py-12 sm:py-20 text-base lg:text-lg flex flex-col gap-20 md:flex-row md:items-center">
-                {contactInfo.map(
+                {CONTACT_INFORMATION.map(
                     ({ title, description, Icon, contact }, index) => {
                         return (
                             <div

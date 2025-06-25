@@ -7,6 +7,8 @@ import {
     HeartHandshakeIcon,
     Instagram,
     Linkedin,
+    Mail,
+    Phone,
     ShieldCheck,
     TimerReset,
     Trophy,
@@ -25,6 +27,21 @@ export const PAGE_URLS = {
     ENROLLMENT_FORM: "https://docs.google.com/forms/d/e/1FAIpQLSfCWNXOaetvKbyxq6aNbnMCwDSJvS2yvviSc26M3AUxiqnGUQ/viewform",
     NEWSLETTER_SUBSCRIPTION: "https://tolce.substack.com/subscribe?utm_source=menu&simple=true&next=https%3A%2F%2Ftolce.substack.com%2Fp%2Fwelcome-on-board"
 }
+
+export const CONTACT_INFORMATION = [
+    {
+        title: "Email Support",
+        description: "Our team can respond in real time.",
+        Icon: Mail,
+        contact: "tolcelearninghub@gmail.com",
+    },
+    {
+        title: "Call Us Directly",
+        description: "Available during work hours",
+        Icon: Phone,
+        contact: "+234 814 627 3427",
+    },
+];
 
 export const FOOTER_LINKS = [
     {

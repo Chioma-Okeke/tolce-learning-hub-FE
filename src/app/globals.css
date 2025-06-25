@@ -186,15 +186,11 @@ body {
 .sellingCard {
     transform-style: preserve-3d;
     border: 1px solid transparent;
-    /* animation: borderHighlight 2s linear infinite; */
 }
 
 @keyframes borderHighlight {
     0% {
         transform: scale(1);
-    }
-    25% {
-      /* box-shadow: 1px 0 0 0 #f58c4f, 0 1px 0 0 #f58c4f, -1px 0 0 0 transparent, 0 -1px 0 0 transparent; Top orange, right side orange */
     }
     50% {
       transform: scale(0.9); /* Yellow */

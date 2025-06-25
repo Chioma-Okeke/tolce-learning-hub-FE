@@ -1,24 +1,16 @@
 "use client"
 
-// import { useEffect } from "react";
+import Image from "next/image";
 
+import { useWindowWidth } from "@/hooks/use-width";
+import { TeamMembers } from "@/components/about-us/team-members";
 import { AnimatedSection } from "@/components/shared/animated-section";
 import { MissionAndValues } from "@/components/about-us/mission-and-values";
-import { TeamMembers } from "@/components/about-us/team-members";
-import Image from "next/image";
-import { useWindowWidth } from "@/hooks/use-width";
 
 const About = () => {
     const width = useWindowWidth()
 
     const isSmallScreen = width < 1024
-
-    // useEffect(() => {
-    //     window.scrollTo({
-    //         top: 0,
-    //         behavior: "smooth",
-    //     });
-    // }, []);
 
     return (
         <>
