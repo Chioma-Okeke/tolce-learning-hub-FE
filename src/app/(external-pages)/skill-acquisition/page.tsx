@@ -113,7 +113,7 @@ const SkillAcquisitionPage = () => {
                         <h2 className="font-semibold text-2xl lg:text-4xl pb-[10px] lg:py-6 xl:text-[40px] text-center">
                             Holistic Skill Development
                         </h2>
-                        <div className="space-y-6 text-lg text-black">
+                        <div className="space-y-6 text-lg text-black text-justify">
                             <p>
                                 Students are gaining a competitive edge through
                                 our holistic skill acquisition programs that
@@ -159,7 +159,7 @@ const SkillAcquisitionPage = () => {
                             <Link target="_blank" href={PAGE_URLS.ENROLLMENT_FORM}>
                                 <Button
                                     variant="secondary"
-                                    className="px-8 py-3 text-lg"
+                                    className="px-8 py-3 text-lg w-[135px]"
                                 >
                                     Enroll Now
                                 </Button>
@@ -168,7 +168,7 @@ const SkillAcquisitionPage = () => {
                                 <Button
                                     variant={"outline"}
                                     onClick={navigateToServiceTiers}
-                                    className="px-8 py-3 border-white text-white hover:text-[#0020F1]"
+                                    className="px-8 py-3 w-[135px] border-white text-white hover:text-[#0020F1]"
                                 >
                                     Learn More
                                 </Button>

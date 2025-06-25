@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 import { AnimatedSection } from "@/components/shared/animated-section";
 import { MissionAndValues } from "@/components/about-us/mission-and-values";
@@ -13,12 +13,12 @@ const About = () => {
 
     const isSmallScreen = width < 1024
 
-    useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
-    }, []);
+    // useEffect(() => {
+    //     window.scrollTo({
+    //         top: 0,
+    //         behavior: "smooth",
+    //     });
+    // }, []);
 
     return (
         <>
