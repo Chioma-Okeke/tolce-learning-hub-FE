@@ -127,7 +127,7 @@ function Outreaches() {
                         } bg-white`}
                 >
                     {/* Highlights Section */}
-                    <section className="py-12 sm:py-20 bg-[#F7F9FC]">
+                    <section className="py-18 sm:py-20 bg-[#F7F9FC]">
                         <AnimatedSection>
                             <div className="max-w-7xl mx-auto px-4">
                                 <h2 className="font-semibold text-2xl lg:text-4xl mb-12 lg:py-6 xl:text-[40px] text-center">

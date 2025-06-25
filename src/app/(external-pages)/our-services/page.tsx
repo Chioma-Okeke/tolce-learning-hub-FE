@@ -47,7 +47,7 @@ const ServicePage = () => {
                         <Link target="_blank" href={PAGE_URLS.ENROLLMENT_FORM}>
                             <Button
                                 variant="secondary"
-                                className="px-8 text-lg"
+                                className="px-8 text-lg w-[135px]"
                             >
                                 Join Now
                             </Button>
@@ -55,7 +55,7 @@ const ServicePage = () => {
                         <Button
                             variant={"outline"}
                             onClick={scrollToServices}
-                            className="px-8 border-white text-white hover:text-[#0020F1]"
+                            className="px-8 border-white text-white hover:text-[#0020F1] w-[135px]"
                         >
                             Learn More
                         </Button>

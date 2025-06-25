@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import { HEADER_LINKS } from "@/constants";
+import { HEADER_LINKS, PAGE_URLS } from "@/constants";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
@@ -106,11 +106,12 @@ export const Header = () => {
                         size={20}
                         cursor={"pointer"}
                         className="hover:scale-110"
+                        color={pathname === PAGE_URLS.ABOUT_US || pathname === PAGE_URLS.OUTREACHES ? "black" : "white"}
                     />
                 </div>
                 <AnimatePresence>
                     <div
-                        className={`overflow-auto fixed top-0 w-full h-full bg-black py-2 transition-all ease-in-out duration-1000 
+                        className={`overflow-auto z-50 fixed top-0 w-full h-full bg-black py-2 transition-all ease-in-out duration-1000 
                     ${isOpen ? "left-0" : "left-[-100%]"}
                 `}
                     >

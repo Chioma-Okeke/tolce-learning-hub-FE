@@ -11,6 +11,7 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useWindowWidth } from "@/hooks/use-width";
+import Image from "next/image";
 
 const HeroSection = () => {
     const swiperRef = React.useRef<SwiperClass | null>(null);
@@ -42,9 +43,11 @@ const HeroSection = () => {
                 {HERO_DATA.map(({ id, image, text }) => (
                     <SwiperSlide key={id} className="relative w-full z-10">
                         <div
-                            style={{ backgroundImage: `url(${image})` }}
-                            className="w-full h-[800px] md:h-screen bg-cover bg-no-repeat bg-center after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-t after:from-black/80 after:to-transparent"
+                            className="w-full min-h-[100svh] after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-t after:from-black/80 after:to-transparent"
                         >
+                            <div className="-z-10 h-screen w-full relative overflow-hidden">
+                                <Image priority alt="background-image" src={image} fill sizes="100vw" className="object-cover object-center"/>
+                            </div>
                             <div className="w-[90%] mx-auto max-w-[1440px] z-20 flex items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                                 <div className="ml-3 mt-5">
                                     <h1 className="font-bold w-full max-w-[750px] text-center md:text-start text-4xl md:text-5xl lg:leading-14 text-white mb-5 md:mb-9">
@@ -76,7 +79,7 @@ const HeroSection = () => {
                     <ChevronRight width={width < 1024 ? 20 : 40} height={width < 1024 ? 20 : 40} color="white" className=" hover:scale-110 cursor-pointer" />
                 </button>
             </div>}
-            <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-50 flex items-center justify-center gap-2">
+            <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 flex items-center justify-center gap-2">
                 { width < 1024 && (
                     HERO_DATA.map((_, index) => (
                         <Button onClick={() => {

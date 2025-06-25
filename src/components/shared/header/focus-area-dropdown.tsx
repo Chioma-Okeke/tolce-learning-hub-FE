@@ -24,7 +24,7 @@ function FocusAreaDropdown() {
 
     return (
         <DropdownMenu>
-            <DropdownMenuTrigger className={cn("group focus:outline-none flex items-center gap-2 border-b border-b-transparent transition-all ease-in-out duration-100 hover:border-b-white cursor-pointer", {
+            <DropdownMenuTrigger className={cn("group text-xl md:text-base focus:outline-none flex items-center gap-2 border-b border-b-transparent transition-all ease-in-out duration-100 hover:border-b-white cursor-pointer", {
                 "font-semibold border-b-white": pathname === "/skillacquisition" || pathname === "/outreaches"
             })}>
                 Focus Areas
