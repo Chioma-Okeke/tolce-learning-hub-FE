@@ -12,6 +12,10 @@ import { Logo } from "./logo";
 import FocusAreaDropdown from "@/components/shared/header/focus-area-dropdown"
 import { useWindowWidth } from "@/hooks/use-width";
 
+const whiteBackgroundPages = [
+    PAGE_URLS.ABOUT_US, PAGE_URLS.OUTREACHES, PAGE_URLS.CONTACT_US
+]
+
 export const Header = () => {
     const { isOpen, close, toggle } = useSidebarStore()
     const [showNavItems, setShowNavItems] = useState(false);
@@ -106,7 +110,7 @@ export const Header = () => {
                         size={20}
                         cursor={"pointer"}
                         className="hover:scale-110"
-                        color={pathname === PAGE_URLS.ABOUT_US || pathname === PAGE_URLS.OUTREACHES ? "black" : "white"}
+                        color={whiteBackgroundPages.includes(pathname) ? "black" : "white"}
                     />
                 </div>
                 <AnimatePresence>

@@ -223,11 +223,11 @@ function Outreaches() {
                                             through impactful outreach.
                                         </p>
 
-                                        <div className="flex border-2 border-red-500 flex-col sm:flex-row gap-4 items-center">
+                                        <div className="max-sm:w-fit max-sm:mx-auto flex flex-col sm:flex-row gap-4 items-center">
                                             <Button variant={"secondary"}>
                                                 Volunteer With Us
                                             </Button>
-                                            <Button>
+                                            <Button className="max-sm:w-full">
                                                 Donate Now
                                             </Button>
                                         </div>

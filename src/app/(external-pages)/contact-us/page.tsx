@@ -10,7 +10,7 @@ function ContactUs() {
 
     return (
         <AnimatedSection className="w-[90%] max-w-[1100px] md:w-[95%] mx-auto my-2">
-            <div className="flex flex-col md:flex-row gap-4 lg:gap-10 max-w-[1440px] mx-auto py-12 sm:py-20 sm:pb-10">
+            <div className="flex flex-col md:flex-row gap-4 lg:gap-10 max-w-[1440px] mx-auto py-18 sm:py-20 sm:pb-10">
                 <div className="md:flex-1 h-[250px] w-full md:h-[550px] relative overflow-hidden">
                     <Image
                         src="https://res.cloudinary.com/djrp3aaq9/image/upload/v1739046489/contact-page.jpg"
