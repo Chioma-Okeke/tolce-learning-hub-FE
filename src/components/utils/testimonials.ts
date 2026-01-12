@@ -2,7 +2,7 @@ export const TESTIMONIALS = [
     {
         id: 1,
         image: "https://res.cloudinary.com/djrp3aaq9/image/upload/v1739046677/student-2.png",
-        message: "Overall, it was a great ride from the very beginning. The fact that we got all these for free makes it more exciting. I was able to gain more knowledge on Excel and power BI through the well tailored teaching mode.",
+        message: "I did not just gain knowledge of tools, I gained a community and understood the importance of service, and overall I landed a job with the knowledge of what I learnt from TOLCE Learning Hub. I also became part of a reading club organized by TOLCE Learning Hub and I no longer have the problem of inconsistency as I have a community ready to keep me on my feet and ensure I read to become better.",
         name: "Stephanie Okoye",
         cohort: "Cohort 2 student"
     },
@@ -16,9 +16,9 @@ export const TESTIMONIALS = [
     {
         id: 3,
         image: "https://res.cloudinary.com/djrp3aaq9/image/upload/v1739046681/student-1.png",
-        message: "TOLCE Learning Hub is really a place to be for persons from all works of life seeking to have a knowledge of data analytics. The learning process at the Hub is from zero to hero, grass to grace. ",
+        message: "TOLCE Learning Hub is really a place to be for persons from all works of life seeking to strengthen their Microsoft Office skills and soft skills. The learning process at the Hub is from zero to hero, grass to grace.",
         name: "Damilola Salau",
-        cohort: "Cohort 1 student"
+        cohort: "Cohort 2 student"
     },
     {
         id: 4,
@@ -68,5 +68,40 @@ export const TESTIMONIALS = [
         message: "My experience was really a beautiful one I must say and of course all aspects were useful to me but I would say the training on pivot table, data analysis and visualisation and the Power BI training was the most valuable to me. This cohort has been impactful and I'm glad to be a part of the training.",
         name: "Semilore Olasoji ",
         cohort: "Cohort 1 student"
-    }
+    },
+    {
+        id: 11,
+        image: "https://res.cloudinary.com/djrp3aaq9/image/upload/v1768250229/Abisola_Stella_Awoyemi_ds07oh.jpg",
+        message: "I secured a Junior Financial Analyst role!!!Thank you to the Founder and to TOLCE Learning Hub. My boss constantly gives nice comments on the output of my reports and dashboards.",
+        name: "Abisola Awoyemi",
+        cohort: "Cohort 3 student"
+    },
+    {
+        id: 12,
+        image: "https://res.cloudinary.com/djrp3aaq9/image/upload/v1768250229/Francis_Ezeakunwanne_bdc2ml.jpg",
+        message: "The presentation class was superb. I would like to appreciate Ms Precious Chukwu for the class. From today onwards, I will ensure that I practise my presentation at least twice before the D-day. I believe it will help reduce my nervousness during the presentation.",
+        name: "Francis Ezeakunwanne",
+        cohort: "Cohort 6 student"
+    },
+    {
+        id: 13,
+        image: "https://res.cloudinary.com/djrp3aaq9/image/upload/v1768250229/Odunayo_Okunlola_td5lru.jpg",
+        message: "I found the lessons enlightening. The most useful part for me was the presentation skills class by Ms Precious, I found my designs better than the previous ones after the class.",
+        name: "Odunayo Okunlola",
+        cohort: "Cohort 6 student"
+    },
+    {
+        id: 14,
+        image: "https://res.cloudinary.com/djrp3aaq9/image/upload/v1768250229/Eziagor_Ifunanya_peace_fmauqp.jpg",
+        message: "The instructions and guidelines for the classes were clear and straightforward. The weekly Assignment was really helpful as it provided an opportunity to practice what I have learnt. Also, I love the Live sessions especially the teaching on presentation skills.",
+        name: "Ifunanya Peace Eziagor",
+        cohort: "Cohort 6 student"
+    },
+    {
+        id: 15,
+        image: "https://res.cloudinary.com/djrp3aaq9/image/upload/v1768250229/Adebukola_Salami_b2cqbm.jpg",
+        message: "My learning experience was truly enlightening and insightful. The combination of classes and practical tasks were instrumental in enhancing my knowledge and skills in Microsoft Office. The instructions and guidelines provided for the classes were sufficiently clear, enabling me to understand and apply the concepts effectively.",
+        name: "Adebukola Salami",
+        cohort: "Cohort 6 student"
+    },
 ]

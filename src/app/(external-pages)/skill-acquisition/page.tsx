@@ -102,13 +102,8 @@ const SkillAcquisitionPage = () => {
                         </h2>
                         <div className="space-y-6 text-lg text-black text-justify">
                             <p>
-                                Students are gaining a competitive edge through
-                                our holistic skill acquisition programs that
-                                combine technical and soft skills. By learning
-                                tools like Excel and Power BI, they enhance
-                                their ability to analyze and present data
-                                effectively, equipping them for data-driven
-                                decision-making in any industry.
+                                Students are gaining a competitive edge through our holistic skill acquisition programs that combine technical and soft skills. 
+                                By mastering Microsoft tools, they build the confidence and competence needed to thrive in today’s corporate environment.
                             </p>
                             <p>
                                 Beyond the technical skills, our programs

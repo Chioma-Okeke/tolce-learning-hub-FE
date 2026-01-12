@@ -26,7 +26,7 @@ const LandingPage = () => {
                 <AnimatedSection>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{
                             duration: 0.8,
                         }}
@@ -76,11 +76,11 @@ const LandingPage = () => {
                             <motion.div
                                 key={program.label}
                                 initial={{ opacity: 0, x: 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
+                                animate={{ opacity: 1, x: 0 }}
                                 transition={{
                                     duration: 0.8,
                                 }}
-                                className="bg-white rounded-xl shadow-lg relative h-fit"
+                                className="bg-white rounded-xl shadow-lg relative h-fit flex flex-col justify-between"
                             >
                                 <div className="bg-white w-full h-[402px] max-h-[402px] rounded-xl relative overflow-hidden">
                                     <Image
@@ -124,7 +124,7 @@ const LandingPage = () => {
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
+                                animate={{ opacity: 1, y: 0 }}
                                 transition={{
                                     duration: 0.5,
                                 }}
