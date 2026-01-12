@@ -95,7 +95,7 @@ export const FEATURES = [
         description:
             "Our programs have inspired thousands of children worldwide",
         isCounter: true,
-        count: 10000,
+        count: 600,
     },
     {
         icon: Trophy,
@@ -103,7 +103,7 @@ export const FEATURES = [
         description:
             "Equipping learners with the skills to thrive in their careers",
         isCounter: true,
-        count: 5000,
+        count: 120,
     },
 ];
 
@@ -112,13 +112,13 @@ export const FOCUS_AREAS = [
         path: "/skill-acquisition",
         imgSrc: "/skill-acquisition-1.jpg",
         label: "Skill Acquisition",
-        description: "Empowering students with technical expertise and essential soft skills to excel in data-driven decision-making and thrive in dynamic workplace environments." 
+        description: "Empowering students with technical expertise and essential soft skills to thrive in dynamic workplace environments and excel in their careers." 
     },
     { 
         path: "/outreaches",
         imgSrc: "https://res.cloudinary.com/djrp3aaq9/image/upload/v1738848638/stbc01fq8i8043ulxqw6.jpg",
         label: "Outreaches",
-        description: "Empowering students with technical expertise and essential soft skills to excel in data-driven decision-making and thrive in dynamic workplace environments." 
+        description: "Giving students in rural communities a fun and meaningful path to self-discovery through reading clubs and educational games that boost creativity and critical thinking." 
     },
     
 ];

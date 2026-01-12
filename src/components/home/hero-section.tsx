@@ -30,7 +30,7 @@ const HeroSection = () => {
         <div className="relative h-fit">
             <Swiper
                 spaceBetween={0}
-                speed={1000}
+                speed={500}
                 autoplay={{ delay: 6000, disableOnInteraction: false }}
                 effect={"fade"}
                 modules={[Autoplay, EffectFade, Mousewheel]}
@@ -72,17 +72,17 @@ const HeroSection = () => {
                 ))}
             </Swiper>
             {width > 1024 && <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 z-50 flex items-center justify-between w-full px-5">
-                <button onClick={() => swiperRef.current && swiperRef.current.slidePrev()}>
+                <button aria-label="Previous Slide" onClick={() => swiperRef.current && swiperRef.current.slidePrev()}>
                     <ChevronLeft width={width < 1024 ? 20 : 40} height={width < 1024 ? 20 : 40} color="white" className=" hover:scale-110 cursor-pointer" />
                 </button>
-                <button onClick={() => swiperRef.current && swiperRef.current.slideNext()}>
+                <button aria-label="Next Slide" onClick={() => swiperRef.current && swiperRef.current.slideNext()}>
                     <ChevronRight width={width < 1024 ? 20 : 40} height={width < 1024 ? 20 : 40} color="white" className=" hover:scale-110 cursor-pointer" />
                 </button>
             </div>}
             <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 flex items-center justify-center gap-2">
                 { width < 1024 && (
                     HERO_DATA.map((_, index) => (
-                        <Button onClick={() => {
+                        <Button aria-label={`Go to slide ${index + 1}`} onClick={() => {
                             swiperRef.current?.slideToLoop(index)
                         }} key={index} variant={currentIndex === index ? "default" : "outline"} className="size-4 rounded-full p-1 transition-colors"></Button>
                     ))
