@@ -80,7 +80,7 @@ const LandingPage = () => {
                                 transition={{
                                     duration: 0.8,
                                 }}
-                                className="bg-white rounded-xl shadow-lg relative h-fit flex flex-col justify-between"
+                                className="bg-white rounded-xl shadow-lg relative h-full"
                             >
                                 <div className="bg-white w-full h-[402px] max-h-[402px] rounded-xl relative overflow-hidden">
                                     <Image
