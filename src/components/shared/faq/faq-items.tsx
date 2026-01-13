@@ -79,7 +79,7 @@ export const FaqItems = ({
                 >
                     <AccordionTrigger
                         showDropdownIcon={false}
-                        className="cursor-pointer group flex w-full items-center hover:font-semibold transition-all ease-in-out duration-500 hover:no-underline justify-between border-none py-2 text-left text-xl font-normal text-greyscale-text-title [&[data-state=open]]:font-semibold"
+                        className="cursor-pointer group flex w-full items-center hover:font-semibold transition-all ease-in-out duration-500 hover:no-underline justify-between border-none py-2 text-left text-base md:text-xl font-normal text-greyscale-text-title [&[data-state=open]]:font-semibold"
                     >
                         <span>{faq.question}</span>
                         <span className="flex size-8 items-center justify-center cursor-pointer">

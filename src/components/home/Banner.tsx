@@ -15,13 +15,15 @@ export const Banner = ({ testimonialData }: {
                             className="card flex-shrink-0 w-[90%] max-w-[300px] p-4 rounded-lg shadow-lg bg-white flex flex-col-reverse justify-between"
                         >
                             <div className="flex items-center gap-5 mt-4">
-                                <Image
-                                    width={64}
-                                    height={64}
-                                    src={testimonial.image}
-                                    alt={testimonial.name}
-                                    className="rounded-full w-16 h-16"
-                                />
+                                <div className="relative w-16 h-16 max-h-16">
+                                    <Image
+                                        fill
+                                        sizes="100vw"
+                                        src={testimonial.image}
+                                        alt={testimonial.name}
+                                        className="rounded-full object-center object-cover"
+                                    />
+                                </div>
                                 <div>
                                     <p className="font-bold">
                                         {testimonial.name}
@@ -46,13 +48,15 @@ export const Banner = ({ testimonialData }: {
                             className="card flex-shrink-0 w-[90%] max-w-[300px] p-4 rounded-lg shadow-lg bg-white flex flex-col-reverse justify-between"
                         >
                             <div className="flex items-center gap-5 mt-4">
-                                <Image
-                                    width={64}
-                                    height={64}
-                                    src={testimonial.image}
-                                    alt={testimonial.name}
-                                    className="rounded-full w-16 h-16"
-                                />
+                                <div className="relative w-16 h-16 max-h-16">
+                                    <Image
+                                        fill
+                                        sizes="100vw"
+                                        src={testimonial.image}
+                                        alt={testimonial.name}
+                                        className="rounded-full object-center object-cover"
+                                    />
+                                </div>
                                 <div>
                                     <p className="font-bold">
                                         {testimonial.name}

@@ -313,7 +313,7 @@ export const TEAM_MEMBERS_IMAGES = [
 export const SKILLS_HIGHLIGHT = [
     {
         title: "Digital Skills",
-        skills: ["Microsoft Excel", "Power BI", "Data Analysis", "Presentation Tools", "Microsoft Word", "Microsoft Power Point", "Email writing", "Data Visualization", "Macroeconomic case studies"],
+        skills: ["Microsoft Word", "Microsoft Excel", "Microsoft Power Point", "Google Sheets", "Microsoft Power BI", "Email writing", "Macroeconomic case studies",]
     },
     {
         title: "Soft Skills",

@@ -92,14 +92,15 @@ function Testimonials() {
                             }`}
                         >
                             <div className="flex items-center gap-5">
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src={testimonial.image}
-                                    alt={testimonial.name}
-                                    loading="lazy"
-                                    className="rounded-full w-[60%] sm:w-[20%] bg-slate-100"
-                                />
+                                <div className="relative w-20 h-20 max-h-20">
+                                    <Image
+                                        fill
+                                        sizes="100vw"
+                                        src={testimonial.image}
+                                        alt={testimonial.name}
+                                        className="rounded-full object-center object-cover"
+                                    />
+                                </div>
                                 <div>
                                     <p className="font-bold">
                                         {testimonial.name}

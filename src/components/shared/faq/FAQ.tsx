@@ -4,7 +4,7 @@ import { FaqItems } from "./faq-items";
 export const Questions = ({scrollToServices}: {scrollToServices: () => void}) => {
     
     return (
-        <div className="h-fit w-[90%] sm:w-[80%] mx-auto flex items-center justify-center">
+        <div className="h-fit w-[90%] md:w-[80%] mx-auto flex items-center justify-center">
             <div className={`w-full sm:w-[80%] mx-auto`}>
                 <h1 className="font-semibold text-2xl lg:text-4xl pb-[10px] lg:py-6 xl:text-[40px] text-center">
                     Frequently Asked Questions
